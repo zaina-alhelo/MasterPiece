@@ -81,5 +81,18 @@ Route::get('/landing/categories/{id}', [CategoryShowController::class, 'show'])-
 Route::get('/landing/recipes', [RecipeShowController::class, 'index'])->name('landing.recipe_cat.index');
 Route::get('/landing/recipes_cat/{id}', [RecipeShowController::class, 'show'])->name('landing.recipe_cat.show');
 
+Route::get('/landing/bmi', function () {
+    return view('landingPage.pages.bmi');
+})->name('bmi');
+
+Route::get('/landing/aboutUs', function () {
+    return view('landingPage.pages.aboutUs');
+})->name('aboutUs');
+Route::get('/landing/idealWeight', function () {
+    return view('landingPage.pages.idealWeight');
+})->name('idealWeight');
+Route::get('/landing/product_check', function () {
+    return view('landingPage.pages.product_check');
+})->name('product_check');
 
 require __DIR__ . '/auth.php';

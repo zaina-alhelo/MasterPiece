@@ -30,22 +30,22 @@
 
             <div class="mb-4">
                 <label for="name" class="block text-sm text-gray-700">{{ __('Name') }}</label>
-                <input id="name" type="text" name="name" value="{{ old('name') }}" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-[#E84256] focus:ring focus:ring-[#E84256] focus:ring-opacity-50" autofocus>
+                <input id="name" type="text" name="name" value="{{ old('name') }}"  class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-[#E84256] focus:ring focus:ring-[#E84256] focus:ring-opacity-50" autofocus>
             </div>
 
             <div class="mb-4">
                 <label for="email" class="block text-sm text-gray-700">{{ __('Email') }}</label>
-                <input id="email" type="email" name="email" value="{{ old('email') }}" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-[#E84256] focus:ring focus:ring-[#E84256] focus:ring-opacity-50">
+                <input id="email" type="email" name="email" value="{{ old('email') }}"  class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-[#E84256] focus:ring focus:ring-[#E84256] focus:ring-opacity-50">
             </div>
 
             <div class="mb-4">
                 <label for="age" class="block text-sm text-gray-700">{{ __('Age') }}</label>
-                <input id="age" type="number" name="age" value="{{ old('age') }}" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-[#E84256] focus:ring focus:ring-[#E84256] focus:ring-opacity-50">
+                <input id="age" type="number" name="age" value="{{ old('age') }}"  class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-[#E84256] focus:ring focus:ring-[#E84256] focus:ring-opacity-50">
             </div>
 
             <div class="mb-4">
                 <label for="gender" class="block text-sm text-gray-700">{{ __('Gender') }}</label>
-                <select id="gender" name="gender" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-[#E84256] focus:ring focus:ring-[#E84256] focus:ring-opacity-50">
+                <select id="gender" name="gender"  class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-[#E84256] focus:ring focus:ring-[#E84256] focus:ring-opacity-50">
                     <option value="male" {{ old('gender') == 'male' ? 'selected' : '' }}>Male</option>
                     <option value="female" {{ old('gender') == 'female' ? 'selected' : '' }}>Female</option>
                 </select>
@@ -53,12 +53,12 @@
 
             <div class="mb-4">
                 <label for="weight" class="block text-sm text-gray-700">{{ __('Weight (kg)') }}</label>
-                <input id="weight" type="number" step="0.1" name="weight" value="{{ old('weight') }}" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-[#E84256] focus:ring focus:ring-[#E84256] focus:ring-opacity-50">
+                <input id="weight" type="number" step="0.1" name="weight" value="{{ old('weight') }}"  class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-[#E84256] focus:ring focus:ring-[#E84256] focus:ring-opacity-50">
             </div>
 
             <div class="mb-4">
                 <label for="height" class="block text-sm text-gray-700">{{ __('Height (cm)') }}</label>
-                <input id="height" type="number" step="0.1" name="height" value="{{ old('height') }}" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-[#E84256] focus:ring focus:ring-[#E84256] focus:ring-opacity-50">
+                <input id="height" type="number" step="0.1" name="height" value="{{ old('height') }}"  class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-[#E84256] focus:ring focus:ring-[#E84256] focus:ring-opacity-50">
             </div>
 
             <div class="mb-4">
@@ -68,17 +68,17 @@
 
             <div class="mb-4">
                 <label for="phone_number" class="block text-sm text-gray-700">{{ __('Phone Number') }}</label>
-                <input id="phone_number" type="text" name="phone_number" value="{{ old('phone_number') }}" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-[#E84256] focus:ring focus:ring-[#E84256] focus:ring-opacity-50">
+                <input id="phone_number" type="text" name="phone_number" value="{{ old('phone_number') }}"  class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-[#E84256] focus:ring focus:ring-[#E84256] focus:ring-opacity-50">
             </div>
 
             <div class="mb-4">
                 <label for="password" class="block text-sm text-gray-700">{{ __('Password') }}</label>
-                <input id="password" type="password" name="password" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-[#E84256] focus:ring focus:ring-[#E84256] focus:ring-opacity-50">
+                <input id="password" type="password" name="password"  class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-[#E84256] focus:ring focus:ring-[#E84256] focus:ring-opacity-50">
             </div>
 
             <div class="mb-4">
                 <label for="password_confirmation" class="block text-sm text-gray-700">{{ __('Confirm Password') }}</label>
-                <input id="password_confirmation" type="password" name="password_confirmation" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-[#E84256] focus:ring focus:ring-[#E84256] focus:ring-opacity-50">
+                <input id="password_confirmation" type="password" name="password_confirmation"  class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-[#E84256] focus:ring focus:ring-[#E84256] focus:ring-opacity-50">
             </div>
 
             <div class="flex items-center justify-between mt-4">

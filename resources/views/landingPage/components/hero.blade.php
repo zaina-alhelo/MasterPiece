@@ -16,35 +16,35 @@
                                     <p class="mb-5 fs-5">اكتشف وصفات غذائية لذيذة وصحية، خطط تمارين رياضية، واحصل على نصائح حول أسلوب حياة متكامل لتحقيق أهدافك الصحية. سواء كنت تسعى لفقدان الوزن، بناء العضلات، أو ببساطة تحسين صحتك،  هنا لدعمك في كل خطوة 
                                     </p>
                                     <div class="d-flex align-items-center justify-content-center">
-                                        <a class="btn-hover-bg btn btn-success rounded-pill text-white py-3 px-5" href="#">Discover Now</a>
+                                        <a class="btn-hover-bg btn btn-success rounded-pill text-white py-3 px-5" href="#"> سجل معنا</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <img src="{{ asset('assets_land/img/carousel-1.jpg')}}" class="img-fluid" alt="Image">
+                            <img src="{{ asset('assets_land/img/hero2.jpg')}}" class="img-fluid" alt="Image">
                             <div class="carousel-caption">
                                 <div class="p-3" style="max-width: 900px;">
                                     <h4 class="text-white text-uppercase fw-bold mb-4" > نحو صحة أفضل، خطوة بخطوة</h4>
-                                    <h1 class="display-2 text-capitalize text-white mb-4">Find Your Perfect Tour At Travel</h1>
-                                    <p class="mb-5 fs-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                                    <h1 class="display-2 text-capitalize text-white mb-4"> معك خطوة بخطوة</h1>
+                                    <p class="mb-5 fs-5">اكتشف وصفات غذائية لذيذة وصحية، خطط تمارين رياضية، واحصل على نصائح حول أسلوب حياة متكامل لتحقيق أهدافك الصحية. سواء كنت تسعى لفقدان الوزن، بناء العضلات، أو ببساطة تحسين صحتك،  هنا لدعمك في كل خطوة 
                                     </p>
                                     <div class="d-flex align-items-center justify-content-center">
-                                        <a class="btn-hover-bg btn btn-success rounded-pill text-white py-3 px-5" href="#">Discover Now</a>
+                                        <a class="btn-hover-bg btn btn-success rounded-pill text-white py-3 px-5" href="#">  سجل معنا </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <img src="assets_land/img/carousel-3.jpg" class="img-fluid" alt="Image">
+                            <img src="assets_land/img/wikiiii.jpg" class="img-fluid" alt="Image">
                             <div class="carousel-caption">
                                 <div class="p-3" style="max-width: 900px;">
                                     <h4 class="text-white text-uppercase fw-bold mb-4" >  التوازن هو سر الحياة الصحية</h4>
                                     <h1 class="display-2 text-capitalize text-white mb-4">لان التوازن هو المفتاح</h1>
-                                    <p class="mb-5 fs-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                                    <p class="mb-5 fs-5">اكتشف وصفات غذائية لذيذة وصحية، خطط تمارين رياضية، واحصل على نصائح حول أسلوب حياة متكامل لتحقيق أهدافك الصحية. سواء كنت تسعى لفقدان الوزن، بناء العضلات، أو ببساطة تحسين صحتك،  هنا لدعمك في كل خطوة 
                                     </p>
                                     <div class="d-flex align-items-center justify-content-center">
-                                        <a class="btn-hover-bg btn btn-success rounded-pill text-white py-3 px-5" href="#">Discover Now</a>
+                                        <a class="btn-hover-bg btn btn-success rounded-pill text-white py-3 px-5" href="#"> سجل معنا</a>
                                     </div>
                                 </div>
                             </div>

@@ -28,8 +28,7 @@
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">{{ $blog->title }}</h5>
-                            <p class="card-text">{{ Str::limit($blog->description, 100) }}</p>
-                            <a href="{{ route('landing.blogs.show', $blog->id) }}" class="btn btn-primary">عرض المدونة</a>
+                            <a href="{{ route('landing.blogs.show', $blog->id) }}" class="btn btn-success">عرض المقالة </a>
                         </div>
                     </div>
                 </div>

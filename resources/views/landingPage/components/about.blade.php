@@ -14,25 +14,20 @@
                         <p class="mb-4">  عبي بيانات منتجك واكتشف اذا كان منتجك صحي او غير صحي     </p>
                         <div class="row gy-2 gx-4 mb-4">
                             <div class="col-sm-6">
-                                <p class="mb-0"><i class="fa fa-arrow-right text-success me-2"></i>First Class Flights</p>
+                                <p class="mb-0">هل كمية الكربوهيدرات  للحصة مناسبة ؟<i class="fa fa-arrow-left text-success me-2"></i></p>
                             </div>
                             <div class="col-sm-6">
-                                <p class="mb-0"><i class="fa fa-arrow-right text-success me-2"></i>Handpicked Hotels</p>
+                                <p class="mb-0">هل يحتوي المنتج  على نسبة دهون عالي ؟<i class="fa fa-arrow-left text-success me-2"></i></p>
                             </div>
                             <div class="col-sm-6">
-                                <p class="mb-0"><i class="fa fa-arrow-right text-success me-2"></i>5 Star Accommodations</p>
+                                <p class="mb-0">هل المنتج صحي ام لا <i class="fa fa-arrow-left text-success me-2"></i></p>
                             </div>
                             <div class="col-sm-6">
-                                <p class="mb-0"><i class="fa fa-arrow-right text-success me-2"></i>Latest Model Vehicles</p>
+                                <p class="mb-0">هل كمية الكربوهيدرات  للحصة مناسبة ؟<i class="fa fa-arrow-left text-success me-2"></i></p>
                             </div>
-                            <div class="col-sm-6">
-                                <p class="mb-0"><i class="fa fa-arrow-right text-success me-2"></i>150 Premium City Tours</p>
-                            </div>
-                            <div class="col-sm-6">
-                                <p class="mb-0"><i class="fa fa-arrow-right text-success me-2"></i>24/7 Service</p>
-                            </div>
+                       
                         </div>
-                        <a class="btn btn-success rounded-pill py-3 px-5 mt-2" href=""> ابدأ الفحص</a>
+                        <a class="btn btn-success rounded-pill py-3 px-5 mt-2" href="{{route('product_check')}}"> ابدأ الفحص</a>
                     </div>
                 </div>
             </div>

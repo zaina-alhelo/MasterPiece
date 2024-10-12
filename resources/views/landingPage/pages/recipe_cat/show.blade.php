@@ -28,8 +28,7 @@
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">{{ $recipe->recipe_name }}</h5>
-                            <p class="card-text">{!! Str::limit($recipe->recipe_description, 100) !!}</p>
-                            <a href="{{ route('landing.recipes.show', $recipe->id) }}" class="btn btn-success">عرض المدونة</a>
+                            <a href="{{ route('landing.recipes.show', $recipe->id) }}" class="btn btn-success">عرض الوصفة </a>
                         </div>
                     </div>
                 </div>
