@@ -1,4 +1,17 @@
 
+
+        .image-container {
+            overflow: hidden;
+        }
+    
+        .blog-image {
+            transition: transform 0.3s ease;
+        }
+    
+        .blog-image:hover {
+            transform: scale(1.1);
+      }
+
 /*** Spinner Start ***/
 /*** Spinner ***/
 #spinner {
@@ -14,7 +27,10 @@
     opacity: 1;
 }
 /*** Spinner End ***/
-
+.rtl {
+    direction: rtl;
+    text-align: right;
+}
 .back-to-top {
     position: fixed;
     right: 30px;
@@ -560,7 +576,7 @@
     width: 100%;
     height: 100%;
     border: 300px solid;
-    border-color: rgba(19, 53, 123, 0.6) rgba(19, 53, 123, 0.6) rgba(19, 53, 123, 0.6) rgba(19, 53, 123, 0.6);
+border-color: rgba(34, 139, 34, 0.6) rgba(34, 139, 34, 0.6) rgba(34, 139, 34, 0.6) rgba(34, 139, 34, 0.6);
     visibility: visible;
 }
 

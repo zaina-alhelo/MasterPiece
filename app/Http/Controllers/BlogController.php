@@ -31,16 +31,17 @@ class BlogController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
-    {
-       
-        $request->validate([
-            'title' => 'required|string|max:255',
-            'content' => 'required|string',
-            'category_id' => 'required|exists:blog__categories,id',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
-        ]);
-        
+   public function store(Request $request)
+{
+    $request->validate([
+        'title' => 'required|string|max:255',
+        'content' => 'required|string',
+        'description' => 'nullable|string', // Add description validation
+        'category_id' => 'required|exists:blog__categories,id',
+        'image' => 'nullable|image|mimes:jpeg,png,jpg',
+    ]);
+    
+    $imagePath = null; // Initialize variable
     if ($request->hasFile('image')) {
         $file = $request->file('image');
         $extension = $file->getClientOriginalExtension(); 
@@ -50,15 +51,17 @@ class BlogController extends Controller
 
         $imagePath = $path . $filename;     
     }
+    
     Blog::create([
-      'title' => $request->title,
-      'content' => $request->content,
-      'category_id' => $request->category_id,
-      'image' => $imagePath,
-  ]);
-      return redirect()->route('blogs.index')->with('success', 'Blog created successfully!');
+        'title' => $request->title,
+        'content' => $request->content,
+        'description' => $request->description, 
+        'category_id' => $request->category_id,
+        'image' => $imagePath,
+    ]);
 
-    }
+    return redirect()->route('blogs.index')->with('success', 'Blog created successfully!');
+}
 
 
   public function show($id)
@@ -80,6 +83,7 @@ public function edit($id)
     $request->validate([
         'title' => 'required|string|max:255',
         'content' => 'required|string',
+        'description' => 'nullable|string', // Add description validation
         'category_id' => 'required|exists:blog__categories,id',
         'image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
     ]);
@@ -88,6 +92,7 @@ public function edit($id)
     
     $blog->title = $request->title;
     $blog->content = $request->content;
+    $blog->description = $request->description; // Update description
     $blog->category_id = $request->category_id;
 
     if ($request->hasFile('image')) {

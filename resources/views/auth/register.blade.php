@@ -1,90 +1,95 @@
-<x-guest-layout>
-    <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
-        @csrf
 
-        <!-- Name -->
-        <div>
-            <x-input-label for="name" :value="__('Name')" />
-            <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')"  autofocus autocomplete="name" />
-            <x-input-error :messages="$errors->get('name')" class="mt-2" />
-        </div>
 
-        <!-- Email Address -->
-        <div class="mt-4">
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')"  autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
-        </div>
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>{{ config('app.name', 'Laravel') }}</title>
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+</head>
+<body class="bg-[#D7EBD9] flex items-center justify-center min-h-screen">
+    <div class="w-full sm:max-w-md p-6 bg-white shadow-md rounded-lg">
+        <h2 class="text-center text-2xl font-bold text-[#E84256] mb-6">{{ __('Register') }}</h2>
 
-        <!-- Age -->
-        <div class="mt-4">
-            <x-input-label for="age" :value="__('Age')" />
-            <x-text-input id="age" class="block mt-1 w-full" type="number" name="age" :value="old('age')"  autocomplete="age" />
-            <x-input-error :messages="$errors->get('age')" class="mt-2" />
-        </div>
+        @if ($errors->any())
+            <div class="mb-4 text-red-600">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
 
-        <!-- Gender -->
-        <div class="mt-4">
-            <x-input-label for="gender" :value="__('Gender')" />
-            <select id="gender" name="gender" class="block mt-1 w-full">
-                <option value="male" {{ old('gender') == 'male' ? 'selected' : '' }}>Male</option>
-                <option value="female" {{ old('gender') == 'female' ? 'selected' : '' }}>Female</option>
-            </select>
-            <x-input-error :messages="$errors->get('gender')" class="mt-2" />
-        </div>
+        <form method="POST" action="{{ route('register') }}">
+            @csrf
 
-        <!-- Weight -->
-        <div class="mt-4">
-            <x-input-label for="weight" :value="__('Weight (kg)')" />
-            <x-text-input id="weight" class="block mt-1 w-full" type="number" step="0.1" name="weight" :value="old('weight')" />
-            <x-input-error :messages="$errors->get('weight')" class="mt-2" />
-        </div>
+            <div class="mb-4">
+                <label for="name" class="block text-sm text-gray-700">{{ __('Name') }}</label>
+                <input id="name" type="text" name="name" value="{{ old('name') }}" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-[#E84256] focus:ring focus:ring-[#E84256] focus:ring-opacity-50" autofocus>
+            </div>
 
-        <!-- Height -->
-        <div class="mt-4">
-            <x-input-label for="height" :value="__('Height (cm)')" />
-            <x-text-input id="height" class="block mt-1 w-full" type="number" step="0.1" name="height" :value="old('height')" />
-            <x-input-error :messages="$errors->get('height')" class="mt-2" />
-        </div>
+            <div class="mb-4">
+                <label for="email" class="block text-sm text-gray-700">{{ __('Email') }}</label>
+                <input id="email" type="email" name="email" value="{{ old('email') }}" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-[#E84256] focus:ring focus:ring-[#E84256] focus:ring-opacity-50">
+            </div>
 
-        <!-- Bio -->
-        <div class="mt-4">
-            <x-input-label for="bio" :value="__('Bio')" />
-            <textarea id="bio" name="bio" class="block mt-1 w-full">{{ old('bio') }}</textarea>
-            <x-input-error :messages="$errors->get('bio')" class="mt-2" />
-        </div>
+            <div class="mb-4">
+                <label for="age" class="block text-sm text-gray-700">{{ __('Age') }}</label>
+                <input id="age" type="number" name="age" value="{{ old('age') }}" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-[#E84256] focus:ring focus:ring-[#E84256] focus:ring-opacity-50">
+            </div>
 
-        <!-- Phone Number -->
-        <div class="mt-4">
-            <x-input-label for="phone_number" :value="__('Phone Number')" />
-            <x-text-input id="phone_number" class="block mt-1 w-full" type="text" name="phone_number" :value="old('phone_number')" />
-            <x-input-error :messages="$errors->get('phone_number')" class="mt-2" />
-        </div>
+            <div class="mb-4">
+                <label for="gender" class="block text-sm text-gray-700">{{ __('Gender') }}</label>
+                <select id="gender" name="gender" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-[#E84256] focus:ring focus:ring-[#E84256] focus:ring-opacity-50">
+                    <option value="male" {{ old('gender') == 'male' ? 'selected' : '' }}>Male</option>
+                    <option value="female" {{ old('gender') == 'female' ? 'selected' : '' }}>Female</option>
+                </select>
+            </div>
 
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
-            <x-text-input id="password" class="block mt-1 w-full"
-                          type="password" name="password"  autocomplete="new-password" />
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
+            <div class="mb-4">
+                <label for="weight" class="block text-sm text-gray-700">{{ __('Weight (kg)') }}</label>
+                <input id="weight" type="number" step="0.1" name="weight" value="{{ old('weight') }}" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-[#E84256] focus:ring focus:ring-[#E84256] focus:ring-opacity-50">
+            </div>
 
-        <!-- Confirm Password -->
-        <div class="mt-4">
-            <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
-            <x-text-input id="password_confirmation" class="block mt-1 w-full"
-                          type="password" name="password_confirmation"  autocomplete="new-password" />
-            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
-        </div>
+            <div class="mb-4">
+                <label for="height" class="block text-sm text-gray-700">{{ __('Height (cm)') }}</label>
+                <input id="height" type="number" step="0.1" name="height" value="{{ old('height') }}" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-[#E84256] focus:ring focus:ring-[#E84256] focus:ring-opacity-50">
+            </div>
 
-        <div class="flex items-center justify-end mt-4">
-            <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('login') }}">
-                {{ __('Already registered?') }}
-            </a>
+            <div class="mb-4">
+                <label for="bio" class="block text-sm text-gray-700">{{ __('Bio') }}</label>
+                <textarea id="bio" name="bio" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-[#E84256] focus:ring focus:ring-[#E84256] focus:ring-opacity-50">{{ old('bio') }}</textarea>
+            </div>
 
-            <x-primary-button class="ms-4">
-                {{ __('Register') }}
-            </x-primary-button>
-        </div>
-    </form>
-</x-guest-layout>
+            <div class="mb-4">
+                <label for="phone_number" class="block text-sm text-gray-700">{{ __('Phone Number') }}</label>
+                <input id="phone_number" type="text" name="phone_number" value="{{ old('phone_number') }}" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-[#E84256] focus:ring focus:ring-[#E84256] focus:ring-opacity-50">
+            </div>
+
+            <div class="mb-4">
+                <label for="password" class="block text-sm text-gray-700">{{ __('Password') }}</label>
+                <input id="password" type="password" name="password" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-[#E84256] focus:ring focus:ring-[#E84256] focus:ring-opacity-50">
+            </div>
+
+            <div class="mb-4">
+                <label for="password_confirmation" class="block text-sm text-gray-700">{{ __('Confirm Password') }}</label>
+                <input id="password_confirmation" type="password" name="password_confirmation" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-[#E84256] focus:ring focus:ring-[#E84256] focus:ring-opacity-50">
+            </div>
+
+            <div class="flex items-center justify-between mt-4">
+                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
+                    {{ __('Already registered?') }}
+                </a>
+                <button type="submit" class="bg-[#E84256] text-white px-4 py-2 rounded-md hover:bg-red-600">
+                    {{ __('Register') }}
+                </button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

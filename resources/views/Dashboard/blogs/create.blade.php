@@ -1,13 +1,8 @@
-    @extends('Dashboard.master')
+@extends('Dashboard.master')
+
+
 
 @section('content')
-@if(session('success'))
-<div class="alert alert-success alert-dismissible fade show" role="alert" id="successMessage">
-    {{ session('success') }}
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-</div>
-@endif  
-
 <section class="section">
     <div class="row">
         <div class="col-lg-12">
@@ -32,7 +27,7 @@
                         <div class="row mb-3">
                             <label for="content" class="col-sm-2 col-form-label">Content</label>
                             <div class="col-sm-10">
-                                <textarea name="content" id="content" class="form-control" rows="5" style="resize: vertical;" required></textarea>
+                                <textarea name="content" id="summernote-content" class="form-control"></textarea>
                                 @error('content')
                                     <div class="text-danger">{{ $message }}</div>
                                 @enderror
@@ -40,11 +35,21 @@
                         </div>
 
                         <div class="row mb-3">
+                            <label for="description" class="col-sm-2 col-form-label">Description</label>
+                            <div class="col-sm-10">
+                                <textarea name="description" id="summernote-description" class="form-control"></textarea>
+                                @error('description')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                        </div>
+
+                    
+                        <div class="row mb-3">
                             <label for="category_id" class="col-sm-2 col-form-label">Category</label>
                             <div class="col-sm-10">
                                 <select name="category_id" id="category_id" class="form-control" required>
                                     <option value="">Select Category</option>
-                                   
                                     @foreach ($categories as $category)
                                         <option value="{{ $category->id }}">{{ $category->category_name }}</option>
                                     @endforeach
@@ -65,6 +70,7 @@
                             </div>
                         </div>
 
+
                         <div class="row">
                             <div class="col-sm-10 offset-sm-2">
                                 <button type="submit" class="btn btn-primary">Create Blog</button>
@@ -77,15 +83,46 @@
         </div>
     </div>
 </section>
+@endsection
+
+<!-- Include required JS files -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
 
 <script>
-    setTimeout(function() {
-        var successMessage = document.getElementById('successMessage');
-        if (successMessage) {
-            successMessage.classList.remove('show');
-            successMessage.classList.add('fade');
-        }
-    }, 2000);
+$(document).ready(function() {
+    $('#summernote-content').summernote({
+        height: 300,
+        toolbar: [
+            ['style', ['style']],
+            ['font', ['bold', 'underline', 'clear']],
+            ['color', ['color']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['table', ['table']],
+            ['insert', ['link', 'picture']],
+            ['view', ['fullscreen', 'codeview', 'help']]
+        ],
+        lang: 'ar', 
+        direction: 'rtl' ,
+    });
+
+    $('#summernote-description').summernote({
+        height: 200,
+        toolbar: [
+            ['style', ['style']],
+            ['font', ['bold', 'underline', 'clear']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['view', ['fullscreen', 'help']]
+        ],
+        lang: 'ar',
+        direction: 'rtl' 
+    });
+});
 </script>
 
-@endsection
+
+
+
+         

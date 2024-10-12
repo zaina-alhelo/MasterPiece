@@ -15,12 +15,14 @@
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center mb-4">
                         <h5 class="card-title">{{ $blog->title }}</h5>
-                        <a href="{{ route('blogs.index') }}" class="btn btn-secondary">Back to Blogs</a>
                     </div>              
-
+<div class="mb-3">
+    <strong>Description:</strong>
+    <p>{!! $blog->description !!}</p>
+</div>
                     <div class="mb-3">
                         <strong>Content:</strong>
-                        <p>{{ $blog->content }}</p>
+                        <p>{!! $blog->content !!}</p> 
                     </div>
 
                     <div class="mb-3">
@@ -40,11 +42,8 @@
                     <div class="d-flex justify-content-start">
                         <a href="{{ route('blogs.edit', $blog->id) }}" class="btn btn-warning">Edit</a>
 
-                        <form action="{{ route('blogs.destroy', $blog->id) }}" method="POST" class="delete-form ms-2">
-                            @csrf
-                            @method('DELETE')
-                            <button type="button" class="btn btn-danger delete-button" data-blog-title="{{ $blog->title }}">Delete</button>
-                        </form>
+                        <a href="{{ route('blogs.index') }}" class="btn btn-secondary">Back to Blogs</a>
+
                     </div>
                 </div>
             </div>

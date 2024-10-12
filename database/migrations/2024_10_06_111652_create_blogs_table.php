@@ -12,13 +12,15 @@ return new class extends Migration
     public function up(): void
     {
      Schema::create('blogs', function (Blueprint $table) {
-        $table->id();
+            $table->id();
         $table->string('title');
         $table->text('content');
+        $table->text('description'); 
         $table->unsignedBigInteger('category_id');
         $table->string('image')->nullable();
         $table->timestamps();
         $table->softDeletes();
+        
         $table->foreign('category_id')->references('id')->on('blog__categories')->onDelete('cascade');
     });
     }

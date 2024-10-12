@@ -39,8 +39,9 @@ Category of Blogs
                                 <td>
                                     <img src="{{ asset($category->image) }}" alt="{{ $category->category_name }}" width="50" height="50" class="img-thumbnail">
                                 </td>
-                                <td>{{ $category->created_at->format('Y/m/d') }}</td>
-                                <td>
+<td>
+    {{ $category->created_at ? $category->created_at->format('Y/m/d') : 'N/A' }}
+</td>                                <td>
                                     <a href="{{ route('categories_blog.edit', $category->id) }}" class="btn btn-primary">Edit</a>
                                     <a href="{{ route('categories_blog.show', $category->id) }}" class="btn btn-primary">show</a>
                                     <form action="{{ route('categories_blog.destroy', $category->id) }}" method="POST" style="display:inline;" class="delete-form">

@@ -24,8 +24,7 @@ Blogs
                         <thead>
                             <tr>
                                 <th>Title</th>
-                                <th>Content</th>
-                                <th>Category</th>
+                           <th>Category</th>
                                 <th>Image</th>
                                 <th>Actions</th>
                             </tr>
@@ -34,7 +33,6 @@ Blogs
                             @foreach ($blogs as $blog)
                             <tr>
                                 <td>{{ $blog->title }}</td>
-                                <td>{{$blog->content}}</td>
                                 <td>{{ optional($blog->category)->category_name ?? 'N/A' }}</td>
                                 <td>
                                     @if ($blog->image)

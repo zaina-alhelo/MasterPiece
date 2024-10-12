@@ -31,7 +31,7 @@
                         <div class="row mb-3">
                             <label for="recipe_description" class="col-sm-2 col-form-label">Description</label>
                             <div class="col-sm-10">
-                                <textarea name="recipe_description" id="recipe_description" class="form-control" rows="5" style="resize: vertical;" required></textarea>
+                                <textarea name="recipe_description" id="summernote-description" class="form-control" rows="5" style="resize: vertical;" required></textarea>
                                 @error('recipe_description')
                                     <div class="text-danger">{{ $message }}</div>
                                 @enderror
@@ -41,7 +41,7 @@
                         <div class="row mb-3">
                             <label for="ingredients" class="col-sm-2 col-form-label">Ingredients</label>
                             <div class="col-sm-10">
-                                <textarea name="ingredients" id="ingredients" class="form-control" rows="5" style="resize: vertical;" required></textarea>
+                                <textarea name="ingredients" id="summernote-ingredients" class="form-control" rows="5" style="resize: vertical;" required></textarea>
                                 @error('ingredients')
                                     <div class="text-danger">{{ $message }}</div>
                                 @enderror
@@ -86,6 +86,44 @@
         </div>
     </div>
 </section>
+
+<!-- Include required JS files -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
+
+<script>
+$(document).ready(function() {
+    $('#summernote-ingredients').summernote({
+        height: 300,
+        toolbar: [
+            ['style', ['style']],
+            ['font', ['bold', 'underline', 'clear']],
+            ['color', ['color']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['table', ['table']],
+            ['insert', ['link', 'picture']],
+            ['view', ['fullscreen', 'codeview', 'help']]
+        ],
+        lang: 'ar', 
+        direction: 'rtl' ,
+    });
+
+    $('#summernote-description').summernote({
+        height: 200,
+        toolbar: [
+            ['style', ['style']],
+            ['font', ['bold', 'underline', 'clear']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['view', ['fullscreen', 'help']]
+        ],
+        lang: 'ar',
+        direction: 'rtl' 
+    });
+});
+</script>
+
 
 <script>
     setTimeout(function() {

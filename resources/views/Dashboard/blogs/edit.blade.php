@@ -25,10 +25,15 @@
                             <label for="title" class="form-label">Title</label>
                             <input type="text" class="form-control" id="title" name="title" value="{{ $blog->title }}" required>
                         </div>
+                        
+                        <div class="mb-3">
+                            <label for="description" class="form-label">Description</label>
+                            <textarea id="summernote-description" name="description" class="form-control">{{ $blog->description }}</textarea>
+                        </div>
 
                         <div class="mb-3">
                             <label for="content" class="form-label">Content</label>
-                            <textarea class="form-control" id="content" name="content" rows="5" required>{{ $blog->content }}</textarea>
+                            <textarea id="summernote-content" name="content" class="form-control">{{ $blog->content }}</textarea>
                         </div>
 
                         <div class="mb-3">
@@ -45,7 +50,7 @@
                         <div class="mb-3">
                             <label for="image" class="form-label">Image</label>
                             @if ($blog->image)
-                                <img src="{{ asset($blog->image) }}" alt="{{ $blog->title }}"  class="img-fluid img-thumbnail mb-2" style="height: 150px;"> 
+                                <img src="{{ asset($blog->image) }}" alt="{{ $blog->title }}" class="img-fluid img-thumbnail mb-2" style="height: 150px;"> 
                                 <br>
                             @endif
                             <input type="file" class="form-control" id="image" name="image">
@@ -59,7 +64,10 @@
         </div>
     </div>
 </section>
-
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
 <script>
     setTimeout(function() {
         var successMessage = document.getElementById('successMessage');
@@ -68,6 +76,42 @@
             successMessage.classList.add('fade');
         }
     }, 2000);
+
+</script>
+
+
+    <script>
+    $(document).ready(function() {
+        $('#summernote-content').summernote({
+            height: 300,
+            toolbar: [
+                ['style', ['style']],
+                ['font', ['bold', 'underline', 'clear']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['table', ['table']],
+                ['insert', ['link', 'picture']],
+                ['view', ['fullscreen', 'codeview', 'help']]
+            ],
+            lang: 'ar', 
+            direction: 'rtl'
+        });
+
+        $('#summernote-description').summernote({
+            height: 200,
+            toolbar: [
+                     ['style', ['style']],
+                ['font', ['bold', 'underline', 'clear']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['table', ['table']],
+                ['insert', ['link', 'picture']],
+                ['view', ['fullscreen', 'codeview', 'help']]
+            ],
+            lang: 'ar',
+            direction: 'rtl'
+        });
+    });
 </script>
 
 @endsection

@@ -10,8 +10,8 @@
         </div>
         <div class="card-body">
             <p><strong>Category:</strong> {{ optional($recipe->category)->category_name }}</p>
-            <p><strong>Ingredients:</strong> {{ $recipe->ingredients }}</p>
-            <p><strong>Description:</strong> {{ $recipe->recipe_description }}</p>
+            <p><strong>Ingredients:</strong> {!! $recipe->ingredients !!}</p>
+            <p><strong>Description:</strong> {!! $recipe->recipe_description !!}</p>
 
             <h5>Images:</h5>
             <div class="row">

@@ -2,13 +2,17 @@
 
 use App\Http\Controllers\BlogCategoryController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\BlogShowController;
 use App\Http\Controllers\BmiController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CategoryShowController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RecipeController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\LandingPageController;
+use App\Http\Controllers\RecipeShowController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -24,9 +28,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/', function () {
-    return view('landingpage.landingpage');
-})->name('landingpage');
+
+Route::get('/', [LandingPageController::class, 'index'])->name('landingpage');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', function () {
@@ -62,4 +66,20 @@ Route::get('/contactUS', function () {
 
 Route::resource('contact', ContactController::class);
 Route::resource('bmi', BmiController::class);
+
+
+Route::get('/landing/blogs/{id}', [BlogShowController::class, 'show'])->name('landing.blogs.show');
+Route::get('/landing/blogs', [BlogShowController::class, 'index'])->name('landing.blogs.index');
+
+Route::get('/landing/recipes/{id}', [RecipeShowController::class, 'recipe'])->name('landing.recipes.show');
+
+
+
+Route::get('/landing/categories', [CategoryShowController::class, 'index'])->name('landing.blog_cat.index');
+Route::get('/landing/categories/{id}', [CategoryShowController::class, 'show'])->name('landing.blog_cat.show');
+
+Route::get('/landing/recipes', [RecipeShowController::class, 'index'])->name('landing.recipe_cat.index');
+Route::get('/landing/recipes_cat/{id}', [RecipeShowController::class, 'show'])->name('landing.recipe_cat.show');
+
+
 require __DIR__ . '/auth.php';
