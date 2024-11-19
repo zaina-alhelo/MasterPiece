@@ -77,7 +77,6 @@ function updateMessages() {
     }
 }
 
-// Auto-scroll to the latest message
 document.addEventListener("DOMContentLoaded", () => {
     const messagesContainer = document.querySelector('.messages');
     if (messagesContainer) {

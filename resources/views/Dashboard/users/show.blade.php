@@ -9,7 +9,7 @@
 
     <div class="text-center mb-4">
     
-        <img src="{{ $user->profile_picture ? asset('storage/' . $user->profile_picture) : asset('assets_land/img/profile.jpg') }}" 
+        <img src="{{ $user->profile_image ? asset( $user->profile_image) : asset('assets_land/img/profile.jpg') }}" 
              alt="Profile Picture" 
              class="rounded-circle shadow" 
              style="width: 150px; height: 150px; object-fit: cover;">
