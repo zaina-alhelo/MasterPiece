@@ -12,7 +12,7 @@
           <li class="breadcrumb-item active">@yield('title-page')</li>
         </ol>
       </nav>
-    </div><!-- End Page Title -->
+    </div>
 @yield("content")
 
 

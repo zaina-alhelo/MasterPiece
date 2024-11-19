@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Dashboard - NiceAdmin Bootstrap Template</title>
+    <title>@yield('title', 'WikiDiet')</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -30,6 +30,10 @@
   <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
 <!-- Include Summernote CSS -->
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@joeattardi/emoji-button@latest/dist/emoji-button.min.css">
+
 </head>
 
 <body>

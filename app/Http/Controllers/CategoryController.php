@@ -40,7 +40,7 @@ class CategoryController extends Controller
     Category::create([
         'category_name' => $request->category_name,
         'category_description' => $request->category_description,
-        'image' => isset($imagePath) ? $imagePath : null, // Save the image path
+        'image' => isset($imagePath) ? $imagePath : null, 
     ]);
 
     return redirect()->route('categories.index')->with('success', 'Category created successfully.');

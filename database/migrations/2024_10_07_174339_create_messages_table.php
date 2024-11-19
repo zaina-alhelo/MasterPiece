@@ -13,12 +13,12 @@ return new class extends Migration
     {
         Schema::create('messages', function (Blueprint $table) {
            $table->id();
-    $table->unsignedBigInteger('sender_id'); // مرسل الرسالة (إما المستخدم أو الإداري)
-    $table->unsignedBigInteger('receiver_id'); // مستلم الرسالة (إما المستخدم أو الإداري)
-    $table->enum('sender_type', ['user', 'admin']); // تحديد نوع المرسل
-    $table->text('message_content'); // محتوى الرسالة
-    $table->string('file_path')->nullable(); // مسار الملف المرفق (PDF أو صورة)
-    $table->timestamps(); // تاريخ ووقت إرسال الرسالة
+    $table->unsignedBigInteger('sender_id'); 
+    $table->unsignedBigInteger('receiver_id')   ;
+    $table->enum('sender_type', ['user', 'admin']);  
+    $table->text('message_content'); 
+    $table->string('file_path')->nullable(); 
+    $table->timestamps(); 
 
     $table->foreign('sender_id')->references('id')->on('users')->onDelete('cascade');
     $table->foreign('receiver_id')->references('id')->on('users')->onDelete('cascade');

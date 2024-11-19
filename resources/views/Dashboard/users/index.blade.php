@@ -13,7 +13,6 @@ Users
     <div class="row">
         <div class="col-lg-12">
             <div class="card">
-
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center mb-4">
                         <h5 class="card-title">User List</h5>
@@ -42,12 +41,21 @@ Users
                                 <td>{{ $user->gender }}</td>
                                 <td>{{ $user->created_at->format('Y/m/d') }}</td>
                                 <td>
-                                    <a href="{{ route('users.edit', $user->id) }}" class="btn btn-primary">Edit</a>
-                                    <form action="{{ route('users.destroy', $user->id) }}" method="POST" style="display:inline;" class="delete-form">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="button" class="btn btn-danger delete-button" data-user-name="{{ $user->name }}">Delete</button>
-                                    </form>
+                                  
+    <a href="{{ route('users.edit', $user->id) }}" class="btn btn-primary btn-sm">
+        <i class="bi bi-pencil"></i> Edit
+    </a>
+    <a href="{{ route('users.show', $user->id) }}" class="btn btn-warning btn-sm  "> <i class="bi bi-eye"></i> Show 
+</a>
+    <form action="{{ route('users.destroy', $user->id) }}" method="POST" style="display:inline;" class="delete-form">
+        @csrf
+        @method('DELETE')
+        <button type="button" class="btn btn-danger btn-sm delete-button" data-user-name="{{ $user->name }}">
+            <i class="bi bi-trash "></i> Delete
+        </button>
+    </form>
+
+
                                 </td>
                             </tr>
                             @endforeach
@@ -61,7 +69,8 @@ Users
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
-   document.querySelectorAll('.delete-button').forEach(button => {
+        document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.delete-button').forEach(button => {
         button.addEventListener('click', function() {
             const form = this.closest('.delete-form');
             const userName = this.getAttribute('data-user-name'); 
@@ -82,6 +91,7 @@ Users
             });
         });
     });
+});
 
     setTimeout(function() {
         var successMessage = document.getElementById('successMessage');

@@ -1,8 +1,7 @@
-@include("landingPage.components.head")
-@include("landingPage.components.spinner")
-@include("landingPage.components.topbar")
-@include("landingPage.components.navbar")
+@extends('land_page')
+@section('title', 'مؤشر كتلة الجسم ')
 
+@section('content')
 <div class="container-fluid bg-breadcrumb">
     <div class="container text-center py-5" style="max-width: 900px;">
         <h3 class="text-white display-3 mb-4">احسب مؤشر كتلة الجسم</h3>
@@ -13,8 +12,8 @@
     </div>
 </div>
 
-<section>
-    <div class="container my-5">
+<section  style="background-color: #f4f9fb;">
+    <div class="container py-5 ">
         <div class="row">
             <!-- BMI Form -->
             <div class="col-md-6 text-center">
@@ -33,7 +32,6 @@
                     </form>
                 </div>
             </div>
-            <!-- Image next to the calculator -->
            <div class="col-md-6 d-flex justify-content-center align-items-center">
     <img src="{{asset('assets_land/img/bmi.jpg')}}" class="img-fluid" alt="BMI Calculation Image">
 </div>
@@ -52,29 +50,27 @@
         let bmi = (weight / (height * height)).toFixed(2);
 
         let resultText = '';
-        let imageUrl = '';
+   let imageUrl = '';
 
-        if (bmi < 18.5) {
-            resultText = 'نقص الوزن';
-            imageUrl = 'https://draljarallah.com/wp-content/uploads/2023/04/BMI-Cal-1.png'; 
-        } else if (bmi >= 18.5 && bmi <= 24.9) {
-            resultText = 'وزن طبيعي';
-            imageUrl = 'https://draljarallah.com/wp-content/uploads/2023/04/BMI-Cal-2.png'; 
-        } else if (bmi >= 25 && bmi <= 29.9) {
-            resultText = 'زيادة الوزن';
-            imageUrl = 'https://draljarallah.com/wp-content/uploads/2023/04/BMI-Cal-3.png';
-        } else if (bmi >= 30 && bmi <= 34.9) {
-            resultText = 'سمنة 1';
-            imageUrl = 'https://draljarallah.com/wp-content/uploads/2023/04/BMI-Cal-4.png'; 
-        } else if (bmi >= 35 && bmi <= 39.9) {
-            resultText = 'سمنة 2';
-            imageUrl = 'https://draljarallah.com/wp-content/uploads/2023/04/BMI-Cal-5.png'; 
-        } else {
-            resultText = 'سمنة مفرطة';
-            imageUrl = 'https://draljarallah.com/wp-content/uploads/2023/04/BMI-Cal-6.png';
-        }
-
-        // عرض SweetAlert مع النتيجة والصورة
+if (bmi < 18.5) {
+    resultText = 'نقص الوزن';
+    imageUrl = 'https://draljarallah.com/wp-content/uploads/2023/04/BMI-Cal-1.png';
+} else if (bmi >= 18.5 && bmi <= 24.9) {
+    resultText = 'وزن طبيعي';
+    imageUrl = '{{ asset("assets_land/img/normal.png") }}';
+} else if (bmi >= 25 && bmi <= 29.9) {
+    resultText = 'زيادة الوزن';
+    imageUrl = '{{ asset("assets_land/img/overweight.png") }}';
+} else if (bmi >= 30 && bmi <= 34.9) {
+    resultText = 'سمنة 1';
+    imageUrl = '{{ asset("assets_land/img/obacity1.png") }}';
+} else if (bmi >= 35 && bmi <= 39.9) {
+    resultText = 'سمنة 2';
+    imageUrl = '{{ asset("assets_land/img/obacity2.png") }}';
+} else {
+    resultText = 'سمنة مفرطة';
+    imageUrl = '{{ asset("assets_land/img/obacity3.png") }}';
+}
         Swal.fire({
             title: `BMI الخاص بك هو: ${bmi}`,
             text: resultText,
@@ -87,4 +83,4 @@
     });
 </script>
 
-@include("landingPage.components.footer")
+@endsection

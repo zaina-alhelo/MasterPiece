@@ -18,7 +18,18 @@ body {
   background: #f6f9ff;
   color: #444444;
 }
-
+.logo {
+    display: flex;
+    align-items: center;
+    max-width: 200px; 
+}
+.logo-img {
+    max-width: 250px;
+    height: auto;
+}
+.logo-img:hover {
+    transform: scale(1.1); /* تأثير تكبير عند التمرير */
+}
 a {
   color: #4154f1;
   text-decoration: none;

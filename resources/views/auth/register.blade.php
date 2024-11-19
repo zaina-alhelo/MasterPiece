@@ -1,95 +1,83 @@
+@extends('layout')
 
+@section('title', 'تسجيل حساب جديد')
 
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>{{ config('app.name', 'Laravel') }}</title>
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-</head>
-<body class="bg-[#D7EBD9] flex items-center justify-center min-h-screen">
-    <div class="w-full sm:max-w-md p-6 bg-white shadow-md rounded-lg">
-        <h2 class="text-center text-2xl font-bold text-[#E84256] mb-6">{{ __('Register') }}</h2>
-
-        @if ($errors->any())
-            <div class="mb-4 text-red-600">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
-
-        <form method="POST" action="{{ route('register') }}">
-            @csrf
-
-            <div class="mb-4">
-                <label for="name" class="block text-sm text-gray-700">{{ __('Name') }}</label>
-                <input id="name" type="text" name="name" value="{{ old('name') }}"  class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-[#E84256] focus:ring focus:ring-[#E84256] focus:ring-opacity-50" autofocus>
-            </div>
-
-            <div class="mb-4">
-                <label for="email" class="block text-sm text-gray-700">{{ __('Email') }}</label>
-                <input id="email" type="email" name="email" value="{{ old('email') }}"  class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-[#E84256] focus:ring focus:ring-[#E84256] focus:ring-opacity-50">
-            </div>
-
-            <div class="mb-4">
-                <label for="age" class="block text-sm text-gray-700">{{ __('Age') }}</label>
-                <input id="age" type="number" name="age" value="{{ old('age') }}"  class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-[#E84256] focus:ring focus:ring-[#E84256] focus:ring-opacity-50">
-            </div>
-
-            <div class="mb-4">
-                <label for="gender" class="block text-sm text-gray-700">{{ __('Gender') }}</label>
-                <select id="gender" name="gender"  class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-[#E84256] focus:ring focus:ring-[#E84256] focus:ring-opacity-50">
-                    <option value="male" {{ old('gender') == 'male' ? 'selected' : '' }}>Male</option>
-                    <option value="female" {{ old('gender') == 'female' ? 'selected' : '' }}>Female</option>
-                </select>
-            </div>
-
-            <div class="mb-4">
-                <label for="weight" class="block text-sm text-gray-700">{{ __('Weight (kg)') }}</label>
-                <input id="weight" type="number" step="0.1" name="weight" value="{{ old('weight') }}"  class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-[#E84256] focus:ring focus:ring-[#E84256] focus:ring-opacity-50">
-            </div>
-
-            <div class="mb-4">
-                <label for="height" class="block text-sm text-gray-700">{{ __('Height (cm)') }}</label>
-                <input id="height" type="number" step="0.1" name="height" value="{{ old('height') }}"  class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-[#E84256] focus:ring focus:ring-[#E84256] focus:ring-opacity-50">
-            </div>
-
-            <div class="mb-4">
-                <label for="bio" class="block text-sm text-gray-700">{{ __('Bio') }}</label>
-                <textarea id="bio" name="bio" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-[#E84256] focus:ring focus:ring-[#E84256] focus:ring-opacity-50">{{ old('bio') }}</textarea>
-            </div>
-
-            <div class="mb-4">
-                <label for="phone_number" class="block text-sm text-gray-700">{{ __('Phone Number') }}</label>
-                <input id="phone_number" type="text" name="phone_number" value="{{ old('phone_number') }}"  class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-[#E84256] focus:ring focus:ring-[#E84256] focus:ring-opacity-50">
-            </div>
-
-            <div class="mb-4">
-                <label for="password" class="block text-sm text-gray-700">{{ __('Password') }}</label>
-                <input id="password" type="password" name="password"  class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-[#E84256] focus:ring focus:ring-[#E84256] focus:ring-opacity-50">
-            </div>
-
-            <div class="mb-4">
-                <label for="password_confirmation" class="block text-sm text-gray-700">{{ __('Confirm Password') }}</label>
-                <input id="password_confirmation" type="password" name="password_confirmation"  class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-[#E84256] focus:ring focus:ring-[#E84256] focus:ring-opacity-50">
-            </div>
-
-            <div class="flex items-center justify-between mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
-                </a>
-                <button type="submit" class="bg-[#E84256] text-white px-4 py-2 rounded-md hover:bg-red-600">
-                    {{ __('Register') }}
-                </button>
-            </div>
-        </form>
+@section('content')
+<div class="container-fluid bg-dark py-5" >
+    <div class="container text-center py-5 " style="max-width: 900px;">   
+        <h3 class="display-4  mb-4" style="color:#E84256">إنشاء حساب جديد</h3>
     </div>
-</body>
-</html>
+</div>
+
+<div class="container py-5" style="max-width: 500px;">
+    <form method="POST" action="{{ route('register') }}" class="bg-white shadow-lg p-4 rounded-lg">
+        @csrf
+
+        <div class="mb-4 rtl">
+            <label for="name" class="form-label text-sm font-semibold text-gray-700">{{ __('الاسم') }}</label>
+            <input id="name" type="text" name="name" value="{{ old('name') }}" class="form-control @error('name') is-invalid @enderror" placeholder="أدخل اسمك" autofocus>
+            @error('name')
+                <div class="text-danger small mt-1">{{ $message }}</div>
+            @enderror
+        </div>
+
+        <div class="mb-4 rtl">
+            <label for="email" class="form-label text-sm font-semibold text-gray-700">{{ __('البريد الإلكتروني') }}</label>
+            <input id="email" type="email" name="email" value="{{ old('email') }}" class="form-control @error('email') is-invalid @enderror" placeholder="أدخل بريدك الإلكتروني">
+            @error('email')
+                <div class="text-danger small mt-1">{{ $message }}</div>
+            @enderror
+        </div>
+
+        <div class="mb-4 rtl">
+            <label for="age" class="form-label text-sm font-semibold text-gray-700">{{ __('العمر') }}</label>
+            <input id="age" type="number" name="age" value="{{ old('age') }}" class="form-control @error('age') is-invalid @enderror" placeholder="أدخل عمرك">
+            @error('age')
+                <div class="text-danger small mt-1">{{ $message }}</div>
+            @enderror
+        </div>
+
+        <div class="mb-4 rtl">
+            <label for="gender" class="form-label text-sm font-semibold text-gray-700">{{ __('الجنس') }}</label>
+            <select id="gender" name="gender" class="form-select @error('gender') is-invalid @enderror">
+                <option value="male" {{ old('gender') == 'male' ? 'selected' : '' }}>ذكر</option>
+                <option value="female" {{ old('gender') == 'female' ? 'selected' : '' }}>أنثى</option>
+            </select>
+            @error('gender')
+                <div class="text-danger small mt-1">{{ $message }}</div>
+            @enderror
+        </div>
+
+        <div class="mb-4 rtl">
+            <label for="weight" class="form-label text-sm font-semibold text-gray-700">{{ __('الوزن (كجم)') }}</label>
+            <input id="weight" type="number" step="0.1" name="weight" value="{{ old('weight') }}" class="form-control @error('weight') is-invalid @enderror" placeholder="أدخل وزنك">
+            @error('weight')
+                <div class="text-danger small mt-1">{{ $message }}</div>
+            @enderror
+        </div>
+
+        <div class="mb-4 rtl">
+            <label for="password" class="form-label text-sm font-semibold text-gray-700">{{ __('كلمة المرور') }}</label>
+            <input id="password" type="password" name="password" class="form-control @error('password') is-invalid @enderror" placeholder="أدخل كلمة المرور">
+            @error('password')
+                <div class="text-danger small mt-1">{{ $message }}</div>
+            @enderror
+        </div>
+
+        <div class="mb-4 rtl">
+            <label for="password_confirmation" class="form-label text-sm font-semibold text-gray-700">{{ __('تأكيد كلمة المرور') }}</label>
+            <input id="password_confirmation" type="password" name="password_confirmation" class="form-control" placeholder="تأكيد كلمة المرور">
+        </div>
+
+        
+        <button type="submit" class="btn btn-success w-100 py-2 mt-4" style="background-color: #E84256; border: none; border-radius: 25px;">أنشاء حساب</button>
+          <div class="mt-4 text-center">
+                <a class="text-muted mb-2">{{ __("هل لديك حساب بالفعل  ؟ ") }}</ش>
+    
+             <a href="{{ route('login') }}" class="text-decoration text-danger fw-bold">
+        {{ __("تسجيل الدخول") }}
+    </a>
+        </div>
+    </form>
+</div>
+@endsection

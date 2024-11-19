@@ -8,7 +8,6 @@
                 <div class="card-body">
                     <h5 class="card-title">Edit Recipe</h5>
 
-                    <!-- Display validation errors -->
                     @if ($errors->any())
                         <div class="alert alert-danger">
                             <ul>
@@ -21,7 +20,7 @@
 
                     <form action="{{ route('recipes.update', $recipe->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
-                        @method('PUT') <!-- Use PUT method for updates -->
+                        @method('PUT') 
 
                         <div class="mb-3">
                             <label for="recipe_name" class="form-label">Recipe Name</label>
@@ -57,7 +56,6 @@
                             <small class="form-text text-muted">You can upload multiple images.</small>
                         </div>
 
-                        <!-- Show current images if they exist -->
                         @if($recipe->recipeImages->count() > 0)
                         <div class="mb-3">
                             <label class="form-label">Current Images:</label><br>
@@ -86,7 +84,6 @@
 
 
 
-<!-- Include required JS files -->
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>

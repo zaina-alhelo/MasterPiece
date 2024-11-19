@@ -24,36 +24,59 @@ class RegisteredUserController extends Controller
     }
 
 
-    public function store(Request $request): RedirectResponse
-    {
-        $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
-            'age' => ['nullable', 'integer', 'min:1', 'max:150'],
-            'gender' => ['nullable', 'string', 'in:male,female'],
-            'weight' => ['nullable', 'numeric', 'min:1', 'max:500'],
-            'height' => ['nullable', 'numeric', 'min:1', 'max:300'],
-            'bio' => ['nullable', 'string', 'max:1000'],
-            'phone_number' => ['nullable', 'string', 'max:20'],
-        ]);
+public function store(Request $request): RedirectResponse
+{
+    $request->validate([
+        'name' => ['required', 'string', 'max:255'],
+        'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+        'password' => ['required', 'confirmed', Rules\Password::defaults()],
+        'age' => ['nullable', 'integer', 'min:1', 'max:150'],
+        'gender' => ['nullable', 'string', 'in:male,female'],
+        'weight' => ['nullable', 'numeric', 'min:1', 'max:500'],
+        'height' => ['nullable', 'numeric', 'min:1', 'max:300'],
+        'bio' => ['nullable', 'string', 'max:1000'],
+        'phone_number' => ['nullable', 'string', 'max:20'],
+    ], [
+        'name.required' => 'الاسم مطلوب.',
+        'name.string' => 'الاسم يجب أن يكون نصًا.',
+        'name.max' => 'الاسم يجب ألا يزيد عن 255 حرفًا.',
+        'email.required' => 'البريد الإلكتروني مطلوب.',
+        'email.email' => 'يجب إدخال بريد إلكتروني صالح.',
+        'email.unique' => 'البريد الإلكتروني مستخدم مسبقًا.',
+        'password.required' => 'كلمة المرور مطلوبة.',
+        'password.confirmed' => 'تأكيد كلمة المرور غير متطابق.',
+        'age.integer' => 'العمر يجب أن يكون عددًا صحيحًا.',
+        'age.min' => 'العمر يجب أن يكون أكبر من 0.',
+        'age.max' => 'العمر يجب ألا يزيد عن 150.',
+        'gender.in' => 'الجنس يجب أن يكون ذكر أو أنثى.',
+        'weight.numeric' => 'الوزن يجب أن يكون رقمًا.',
+        'weight.min' => 'الوزن يجب أن يكون أكبر من 0.',
+        'weight.max' => 'الوزن يجب ألا يزيد عن 500.',
+        'height.numeric' => 'الطول يجب أن يكون رقمًا.',
+        'height.min' => 'الطول يجب أن يكون أكبر من 0.',
+        'height.max' => 'الطول يجب ألا يزيد عن 300.',
+        'bio.max' => 'الوصف الشخصي يجب ألا يزيد عن 1000 حرف.',
+        'phone_number.max' => 'رقم الهاتف يجب ألا يزيد عن 20 حرفًا.',
+    ]);
 
-        $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-            'age' => $request->age,
-            'gender' => $request->gender,
-            'weight' => $request->weight,
-            'height' => $request->height,
-            'bio' => $request->bio,
-            'phone_number' => $request->phone_number,
-        ]);
+    $user = User::create([
+        'name' => $request->name,
+        'email' => $request->email,
+        'password' => Hash::make($request->password),
+        'age' => $request->age,
+        'gender' => $request->gender,
+        'weight' => $request->weight,
+        'height' => $request->height,
+        'bio' => $request->bio,
+        'phone_number' => $request->phone_number,
+    ]);
 
-        event(new Registered($user));
+    event(new Registered($user));
 
-        Auth::login($user);
+    Auth::login($user);
 
-        return redirect(RouteServiceProvider::HOME);
+    return redirect(RouteServiceProvider::HOME);
+
+
     }
 }

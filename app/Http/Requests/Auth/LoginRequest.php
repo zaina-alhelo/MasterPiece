@@ -32,6 +32,18 @@ class LoginRequest extends FormRequest
         ];
     }
 
+
+    /**
+     * Get custom messages for validator errors.
+     */
+    public function messages(): array
+    {
+        return [
+            'email.required' => 'البريد الإلكتروني مطلوب.',
+            'email.email' => 'يجب إدخال بريد إلكتروني صالح.',
+            'password.required' => 'كلمة المرور مطلوبة.',
+        ];
+    }
     /**
      * Attempt to authenticate the request's credentials.
      *

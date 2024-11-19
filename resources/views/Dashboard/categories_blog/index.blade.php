@@ -42,12 +42,16 @@ Category of Blogs
 <td>
     {{ $category->created_at ? $category->created_at->format('Y/m/d') : 'N/A' }}
 </td>                                <td>
-                                    <a href="{{ route('categories_blog.edit', $category->id) }}" class="btn btn-primary">Edit</a>
-                                    <a href="{{ route('categories_blog.show', $category->id) }}" class="btn btn-primary">show</a>
+                                    <a href="{{ route('categories_blog.edit', $category->id) }}" class="btn btn-primary btn-sm"> <i class="bi bi-pencil btn-sm"></i> Edit
+</a>
+<a href="{{ route('categories_blog.show', $category->id) }}" class="btn btn-warning btn-sm">
+    <i class="bi bi-eye"></i> Show
+</a>
                                     <form action="{{ route('categories_blog.destroy', $category->id) }}" method="POST" style="display:inline;" class="delete-form">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="button" class="btn btn-danger delete-button" data-category-name="{{ $category->category_name }}">Delete</button>
+                                        <button type="button" class="btn btn-danger delete-button btn-sm" data-category-name="{{ $category->category_name }}">            <i class="bi bi-trash"></i> Delete
+</button>
                                     </form>
                                 </td>
                             </tr>
@@ -62,6 +66,8 @@ Category of Blogs
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
+            document.addEventListener('DOMContentLoaded', function() {
+
    document.querySelectorAll('.delete-button').forEach(button => {
         button.addEventListener('click', function() {
             const form = this.closest('.delete-form');
@@ -82,6 +88,7 @@ Category of Blogs
                 }
             });
         });
+    });
     });
 
     setTimeout(function() {

@@ -34,20 +34,19 @@ Recipes
                                 <td>{{ $recipe->recipe_name }}</td>
                                 <td>{{ optional($recipe->category)->category_name }}</td> 
                                 <td>
-                                  <a href="{{ route('recipes.edit', $recipe->id) }}" class="text-warring ">
-                                    <i class="bi bi-pencil"></i> 
+                                  <a href="{{ route('recipes.edit', $recipe->id) }}" class="btn btn-primary btn-sm "><i class="bi bi-pencil"></i> Edit
 </a>
-<a href="{{ route('recipes.show', $recipe->id) }}" class="text-warring ">
-    <i class="bi bi-eye "></i> 
+
+<a href="{{ route('recipes.show', $recipe->id) }}" class="btn btn-warning btn-sm  "> <i class="bi bi-eye"></i> Show 
 </a>
+
 
                             <form action="{{ route('recipes.destroy', $recipe->id) }}" method="POST" style="display:inline;" class="delete-form">
                                 @csrf
                             @method('DELETE')
-                    <a href="#" class="text-danger delete-button" data-recipe-name="{{ $recipe->recipe_name }}">
-                      <i class="bi bi-x"></i> 
-                        </a>
+                 
 </form>
+                                        <button type="button" class="btn btn-danger btn-sm delete-button" data-blog-title="{{ $recipe->recipe_name }}">            <i class="bi bi-trash"></i> Delete
 
                                 </td>
                             </tr>
@@ -62,6 +61,8 @@ Recipes
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
+            document.addEventListener('DOMContentLoaded', function() {
+
    document.querySelectorAll('.delete-button').forEach(button => {
         button.addEventListener('click', function() {
             const form = this.closest('.delete-form');
@@ -82,6 +83,7 @@ Recipes
                 }
             });
         });
+    });
     });
 
     setTimeout(function() {

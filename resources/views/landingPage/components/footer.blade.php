@@ -2,86 +2,71 @@
         <!-- Footer Start -->
         <div class="container-fluid footer py-5">
             <div class="container py-5">
-                <div class="row g-5">
+                <div class="row g-5 ">
                     <div class="col-md-6 col-lg-6 col-xl-3">
                         <div class="footer-item d-flex flex-column">
-                            <h4 class="mb-4 text-white">Get In Touch</h4>
-                            <a href=""><i class="fas fa-home me-2"></i> 123 Street, New York, USA</a>
-                            <a href=""><i class="fas fa-envelope me-2"></i> info@example.com</a>
-                            <a href=""><i class="fas fa-phone me-2"></i> +012 345 67890</a>
-                            <a href="" class="mb-3"><i class="fas fa-print me-2"></i> +012 345 67890</a>
-                            <div class="d-flex align-items-center">
+  <a href="" class="navbar-brand p-0">
+                    <img src="{{asset('images/logo.png')}}" alt="Logo" class="mb-5" style="width: 100px;">
+                </a>        <a href="https://maps.app.goo.gl/foBZf2CKf4Z53bG69" target="_blank"><i class="fas fa-home me-2"></i> مركز الغذاء المثالي</a>
+                            <a href="mailto:zainaalhelo00@gmail.com"><i class="fas fa-envelope me-2"></i>Rubaalhelo@gmail.com</a>
+                            <a href="tel:+962123456789"><i class="fas fa-phone me-2"></i> +962 123 456 789</a>
+                            <div class="d-flex align-items-center mt-2">
                                 <i class="fas fa-share fa-2x text-white me-2"></i>
-                                <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-instagram"></i></a>
-                                <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                                <a class="btn-square btn btn-success rounded-circle mx-1"  href="https://www.facebook.com/rubaalhelo23?mibextid=ZbWKwL" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn-square btn btn-success rounded-circle mx-1" href="https://www.instagram.com/dietitian.rubaalhelo?igsh=MTFiM2o1NXZjd2MwbQ==" target="_blank"><i class="fab fa-instagram"></i></a>
+                                <a class="btn-square btn btn-success rounded-circle mx-1" href="https://www.linkedin.com/in/rubaalhelo?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-item d-flex flex-column">
-                            <h4 class="mb-4 text-white">Company</h4>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> About</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Careers</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Blog</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Press</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Gift Cards</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Magazine</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-item d-flex flex-column">
-                            <h4 class="mb-4 text-white">Support</h4>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Contact</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Legal Notice</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Privacy Policy</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Terms and Conditions</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Sitemap</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Cookie policy</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-item">
-                            <div class="row gy-3 gx-2 mb-4">
-                                <div class="col-xl-6">
-                                    <form>
-                                        <div class="form-floating">
-                                            <select class="form-select bg-dark border" id="select1">
-                                                <option value="1">Arabic</option>
-                                                <option value="2">German</option>
-                                                <option value="3">Greek</option>
-                                                <option value="3">New York</option>
-                                            </select>
-                                            <label for="select1">English</label>
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="col-xl-6">
-                                    <form>
-                                        <div class="form-floating">
-                                            <select class="form-select bg-dark border" id="select1">
-                                                <option value="1">USD</option>
-                                                <option value="2">EUR</option>
-                                                <option value="3">INR</option>
-                                                <option value="3">GBP</option>
-                                            </select>
-                                            <label for="select1">$</label>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                            <h4 class="text-white mb-3">Payments</h4>
-                            <div class="footer-bank-card">
-                                <a href="#" class="text-white me-2"><i class="fab fa-cc-amex fa-2x"></i></a>
-                                <a href="#" class="text-white me-2"><i class="fab fa-cc-visa fa-2x"></i></a>
-                                <a href="#" class="text-white me-2"><i class="fas fa-credit-card fa-2x"></i></a>
-                                <a href="#" class="text-white me-2"><i class="fab fa-cc-mastercard fa-2x"></i></a>
-                                <a href="#" class="text-white me-2"><i class="fab fa-cc-paypal fa-2x"></i></a>
-                                <a href="#" class="text-white"><i class="fab fa-cc-discover fa-2x"></i></a>
-                            </div>
-                        </div>
-                    </div>
+              <div class="col-md-6 col-lg-6 col-xl-3 rtl" >
+        <div class="footer-item d-flex flex-column">
+            <h4 class="mb-4 text-white">تعرف أكثر</h4>
+            <a href="{{route('aboutUs')}}"> <i class="fas fa-angle-left me-2"></i> من نحن  </a>
+            <a href=""> <i class="fas fa-angle-left me-2"></i> قصص النجاح  </a>
+            <a href="">  <i class="fas fa-angle-left me-2"></i> آراء مراجعينا    </a>
+            <a href="{{route('contactUS')}}">  <i class="fas fa-angle-left me-2"></i> تواصل معنا  </a>
+        </div>
+    </div>
+    
+    <div class="col-md-6 col-lg-6 col-xl-3 rtl">
+        <div class="footer-item d-flex flex-column">
+            <h4 class="mb-4 text-white">صفحات مفيدة</h4>
+            <a href="{{route('product_check')}}"> <i class="fas fa-angle-left me-2"></i> شّيك منتجك  </a>
+            <a href="{{route('landing.recipe_cat.index')}}"><i class="fas fa-angle-left me-2"></i> وصفات صحية  </a>
+            <a href="{{route('landing.blog_cat.index')}}">  <i class="fas fa-angle-left me-2"></i>  مقالات صحية  </a>
+            <a href="{{route('bmi')}}">  <i class="fas fa-angle-left me-2"></i> مؤشر كتلة الجسم </a>
+            <a href="{{route('delayNeed')}}"> <i class="fas fa-angle-left me-2"></i> الأحتياج اليومي  </a>
+            <a href="{{route('idealWeight')}}"> <i class="fas fa-angle-left me-2"></i> الوزن المثالي  </a>
+        </div>
+    </div>
+                    
+                     <div class="col-md-6 col-lg-6 col-xl-3">
+            
+<div class="footer-item d-flex flex-column rtl">
+    <h4 class="mb-4 text-white"> أخر المقالات </h4>
+@foreach($blogs_footer as $blog)
+    <div class="mb-3">
+        <a href="{{ route('landing.blogs.show', $blog->id) }}   " class="d-flex align-items-center text-white text-decoration-none">
+            <div style="flex-shrink: 0; width: 70px; height: 70px; overflow: hidden; border-radius: 8px; background-color: #ddd; transition: transform 0.3s;">
+                <img src="{{ asset($blog->image) }}" alt="{{ $blog->title }}" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s;">
+            </div>
+            <div class="ms-3">
+                <strong class="d-block" style="font-size: 1rem; font-weight: bold; line-height: 1.2;">  <i class="fas fa-angle-left me-1"> {{ $blog->title }}</i> </strong>
+                <small class="text-muted" style="font-size: 0.85rem;">
+                        <i class="fas fa-calendar-alt me-1"></i> {{ \Carbon\Carbon::parse($blog->created_at)->format('d-m-Y') }}
+                    </small> <br>
+                    
+            </div>
+        </a>
+    </div>
+@endforeach
+
+</div>
+
+
+</div>
+
+
                 </div>
             </div>
         </div>
@@ -92,18 +77,17 @@
             <div class="container">
                 <div class="row g-4 align-items-center">
                     <div class="col-md-6 text-center text-md-end mb-md-0">
-                        <i class="fas fa-copyright me-2"></i><a class="text-white" href="#">Your Site Name</a>, All right reserved.
+                        <i class="fas fa-copyright me-2"></i><a class="text-white" href="#">WikiDiet</a>, All right reserved.
                     </div>
                     <div class="col-md-6 text-center text-md-start">
-                        <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
-                        <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
-                        <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
-                        Designed By <a class="text-white" href="https://htmlcodex.com">HTML Codex</a> Distributed By <a href="https://themewagon.com">ThemeWagon</a>
+
+                        Designed By <a class="text-white" href="">Zaineh Al-Helo</a> 
                     </div>
                     </div>
                 </div>
             </div>
         </div>
+
         <!-- Copyright End -->
 
         <!-- Back to Top -->
@@ -120,6 +104,7 @@
 
     <!-- Template Javascript -->
     <script src="{{ asset('assets_land/js/main.js') }}"></script>
+<script src="{{ asset('js/app.js') }}"></script>
 
 
 </body>

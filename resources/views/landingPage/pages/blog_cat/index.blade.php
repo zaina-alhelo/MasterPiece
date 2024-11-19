@@ -1,8 +1,7 @@
-@include("landingPage.components.head")
-@include("landingPage.components.spinner")
-@include("landingPage.components.topbar")
-@include("landingPage.components.navbar")
+@extends('land_page')
+@section('title', 'مقالات ')
 
+@section('content')
 <div class="container-fluid bg-breadcrumb">
     <div class="container text-center py-5" style="max-width: 900px;">
         <h3 class="text-white display-3 mb-4">مقالات صحية</h3>
@@ -29,5 +28,6 @@
         @endforeach
     </div>
 </div>
+@endsection
 
-@include("landingPage.components.footer")
+

@@ -1,8 +1,7 @@
-@include("landingPage.components.head")
-@include("landingPage.components.spinner")
-@include("landingPage.components.topbar")
-@include("landingPage.components.navbar")
+@extends('land_page')
+@section('title', $blog->title)
 
+@section('content')
 <div class="container-fluid bg-breadcrumb">
     <div class="container text-center py-5" style="max-width: 900px;">
         <h3 class="text-white display-3 mb-4">{{ $blog->title }}</h3>
@@ -39,4 +38,4 @@
 </div>
 <!-- Blog Show End -->
 
-@include("landingPage.components.footer")
+@endsection

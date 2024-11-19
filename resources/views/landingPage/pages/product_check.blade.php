@@ -13,8 +13,8 @@
     </div>
 </div>
 
-<section>
-    <div class="container my-5">
+<section   style="background-color: #f4f9fb;">
+    <div class="container py-5">
         <div class="row">
             <div class="col-md-6 mx-auto text-center">
                 <div class="bg-white rounded-lg shadow-lg p-5">
@@ -64,7 +64,6 @@
         e.preventDefault();
         const barcode = document.getElementById('barcode').value;
 
-        // Call Open Food Facts API using barcode
         fetch(`https://world.openfoodfacts.org/api/v0/product/${barcode}.json`)
             .then(response => response.json())
             .then(data => {
@@ -123,7 +122,6 @@ document.getElementById('nutritionForm').addEventListener('submit', function(e) 
 
     const result = checkHealth(calories, fat, sugar, sodium, carbohydrates);
 
-    // عرض النتيجة باستخدام SweetAlert
     Swal.fire({
         title: 'نتيجة الفحص',
         text: `النتيجة: ${result}`,

@@ -15,9 +15,11 @@
                                     <h3 class="display-2 text-capitalize text-white mb-4">  ابدأ رحلتك نحو حياة صحية</h3>
                                     <p class="mb-5 fs-5">اكتشف وصفات غذائية لذيذة وصحية، خطط تمارين رياضية، واحصل على نصائح حول أسلوب حياة متكامل لتحقيق أهدافك الصحية. سواء كنت تسعى لفقدان الوزن، بناء العضلات، أو ببساطة تحسين صحتك،  هنا لدعمك في كل خطوة 
                                     </p>
+                                        @guest
                                     <div class="d-flex align-items-center justify-content-center">
-                                        <a class="btn-hover-bg btn btn-success rounded-pill text-white py-3 px-5" href="#"> سجل معنا</a>
+                                        <a class="btn-hover-bg btn btn-success rounded-pill text-white py-3 px-5" href="{{ route('register') }}"> سجل معنا</a>
                                     </div>
+                                       @endguest
                                 </div>
                             </div>
                         </div>
@@ -29,9 +31,11 @@
                                     <h1 class="display-2 text-capitalize text-white mb-4"> معك خطوة بخطوة</h1>
                                     <p class="mb-5 fs-5">اكتشف وصفات غذائية لذيذة وصحية، خطط تمارين رياضية، واحصل على نصائح حول أسلوب حياة متكامل لتحقيق أهدافك الصحية. سواء كنت تسعى لفقدان الوزن، بناء العضلات، أو ببساطة تحسين صحتك،  هنا لدعمك في كل خطوة 
                                     </p>
+                                        @guest
                                     <div class="d-flex align-items-center justify-content-center">
-                                        <a class="btn-hover-bg btn btn-success rounded-pill text-white py-3 px-5" href="#">  سجل معنا </a>
+                                        <a class="btn-hover-bg btn btn-success rounded-pill text-white py-3 px-5" href="{{ route('register') }}">  سجل معنا </a>
                                     </div>
+                                       @endguest
                                 </div>
                             </div>
                         </div>
@@ -43,9 +47,11 @@
                                     <h1 class="display-2 text-capitalize text-white mb-4">لان التوازن هو المفتاح</h1>
                                     <p class="mb-5 fs-5">اكتشف وصفات غذائية لذيذة وصحية، خطط تمارين رياضية، واحصل على نصائح حول أسلوب حياة متكامل لتحقيق أهدافك الصحية. سواء كنت تسعى لفقدان الوزن، بناء العضلات، أو ببساطة تحسين صحتك،  هنا لدعمك في كل خطوة 
                                     </p>
+                                        @guest
                                     <div class="d-flex align-items-center justify-content-center">
-                                        <a class="btn-hover-bg btn btn-success rounded-pill text-white py-3 px-5" href="#"> سجل معنا</a>
+                                        <a class="btn-hover-bg btn btn-success rounded-pill text-white py-3 px-5" href="{{ route('register') }}"> سجل معنا</a>
                                     </div>
+                                       @endguest
                                 </div>
                             </div>
                         </div>

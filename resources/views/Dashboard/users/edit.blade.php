@@ -8,7 +8,6 @@
                 <div class="card-body">
                     <h5 class="card-title">Edit User</h5>
 
-                    <!-- Display validation errors -->
                     @if ($errors->any())
                         <div class="alert alert-danger">
                             <ul>
@@ -21,7 +20,7 @@
 
                     <form action="{{ route('users.update', $user->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
-                        @method('PUT') <!-- Use PUT method for updates -->
+                        @method('PUT')
                         <div class="mb-3">
                             <label for="name" class="form-label">Name</label>
                             <input type="text" class="form-control" id="name" name="name" value="{{ old('name', $user->name) }}" required>
@@ -35,9 +34,10 @@
                             <input type="text" class="form-control" id="role" name="role" value="{{ old('role', $user->role) }}">
                         </div>
                         <div class="mb-3">
-                            <label for="age" class="form-label">Age</label>
-                            <input type="number" class="form-control" id="age" name="age" value="{{ old('age', $user->age) }}" min="0">
-                        </div>
+    <label for="birthday" class="form-label">Birthday</label>
+    <input type="date" class="form-control" id="birthday" name="birthday" value="{{ old('birthday', $user->birthday) }}">
+</div>
+
                         <div class="mb-3">
                             <label for="gender" class="form-label">Gender</label>
                             <select class="form-select" id="gender" name="gender">

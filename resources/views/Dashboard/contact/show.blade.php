@@ -8,10 +8,8 @@
                 <div class="card-body">
                     <h5 class="card-title">Contact Details</h5>
                     
-                    <!-- Category Card -->
                     <div class="card mb-3">
                         <div class="row g-0">
-                            <!-- Category Details -->
                             <div class="col-md-8">
                                 <div class="card-body">
                                     <h5 class="card-title">{{ $contact->name}}</h5>

@@ -1,66 +1,41 @@
+@extends('land_page')
+@section('title', 'من نحن')
 
-@include("landingPage.components.head")
-@include("landingPage.components.spinner")
-@include("landingPage.components.topbar")
-@include("landingPage.components.navbar")
+@section('content')
 
+<!-- Breadcrumb Section -->
+<div class="container-fluid bg-breadcrumb">
+    <div class="container text-center py-5" style="max-width: 900px;">
+        <h3 class="text-white display-3 mb-4">من نحن</h3>
+        <ol class="breadcrumb justify-content-center mb-0">
+            <li class="breadcrumb-item"><a href="{{ url('/') }}" class="text-white">الصفحة الرئيسية</a></li>
+            <li class="breadcrumb-item active text-white">من نحن</li>
+        </ol>
+    </div>
+</div>
 
-  <div class="container-fluid bg-breadcrumb">
-            <div class="container text-center py-5" style="max-width: 900px;">
-                <h3 class="text-white display-3 mb-4" >  من نحن </h3>
-                <ol class="breadcrumb justify-content-center mb-0">
-                    <li class="breadcrumb-item"><a href="{{url('/')}}">الصفحة الرئيسية </a></li>
-                    <li class="breadcrumb-item active text-white"> من نحن  </li>
-                </ol>    
-            </div>
-        </div>
-
-
-
-
-
-
-
-
-<div class="container-fluid about py-5">
-            <div class="container py-5">
-                <div class="row g-5 align-items-center">
-                    <div class="col-lg-5">
-                        <div class="h-100" style="border: 50px solid; border-color: transparent #13357B transparent #13357B;">
-                            <img src="{{asset('assets_land/img/about-img.jpg')}}" class="img-fluid w-100 h-100" alt="">
-                        </div>
-                    </div>
-                    <div class="col-lg-7" style="background: linear-gradient(rgba(255, 255, 255, .8), rgba(255, 255, 255, .8)), url(img/about-img-1.png);">
-                        <h5 class="section-about-title pe-3">About Us</h5>
-                        <h1 class="mb-4">Welcome to <span class="text-primary">Travela</span></h1>
-                        <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, dolorum, doloribus sunt dicta, officia voluptatibus libero necessitatibus natus impedit quam ullam assumenda? Id atque iste consectetur. Commodi odit ab saepe!</p>
-                        <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium quos voluptatem suscipit neque enim, doloribus ipsum rem eos distinctio, dignissimos nisi saepe nulla? Libero numquam perferendis provident placeat molestiae quia?</p>
-                        <div class="row gy-2 gx-4 mb-4">
-                            <div class="col-sm-6">
-                                <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>First Class Flights</p>
-                            </div>
-                            <div class="col-sm-6">
-                                <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Handpicked Hotels</p>
-                            </div>
-                            <div class="col-sm-6">
-                                <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>5 Star Accommodations</p>
-                            </div>
-                            <div class="col-sm-6">
-                                <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Latest Model Vehicles</p>
-                            </div>
-                            <div class="col-sm-6">
-                                <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>150 Premium City Tours</p>
-                            </div>
-                            <div class="col-sm-6">
-                                <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>24/7 Service</p>
-                            </div>
-                        </div>
-                        <a class="btn btn-primary rounded-pill py-3 px-5 mt-2" href="">Read More</a>
-                    </div>
+<!-- About Section -->
+<div class="container-fluid about py-5" style="background-color: #f4f9fb;">
+    <div class="container py-5">
+        <div class="row justify-content-center rtl">
+            <div class="col-lg-8">
+                <h5 class="text-success mb-3 text-center fw-bold"> الأخصائية</h5>
+                <h1 class="mb-4 text-center display-4 text-dark"> <span class="text-success">  ربى  الحلو </span></h1>
+                <p class="mb-4 text-justify" style="line-height: 1.8;">
+                    أنا أخصائية تغذية متخصصة في تقديم الاستشارات الغذائية والصحية، وأؤمن بأن التغذية السليمة هي أساس الحياة الصحية. أعمل على مساعدة الأفراد في تحسين نمط حياتهم من خلال خطط غذائية مخصصة تتناسب مع احتياجاتهم الصحية، سواء كان ذلك لتحسين الصحة العامة، إنقاص الوزن، أو إدارة الأمراض المزمنة.
+                </p>
+                <p class="mb-4 text-justify" style="line-height: 1.8;">
+                    حصلت على شهادة <span class="fw-bold">البكالوريوس</span> من <span class="fw-bold">جامعة مؤتة</span>، وأنا أخصائية في <span class="fw-bold">الغذاء المثالي في العقبة</span>. أستخدم أساليب علمية وحديثة في تقويم الاحتياجات الغذائية لكل فرد، وأركز على تقديم حلول عملية ومستدامة تساعد على الوصول إلى أهداف صحية واقعية.
+                </p>
+                <p class="mb-4 text-justify" style="line-height: 1.8;">
+                    هدفي هو أن أكون شريكًا في رحلتك نحو صحة أفضل وحياة أكثر توازنًا. من خلال العمل معي، ستتمكن من فهم احتياجات جسمك بشكل أفضل وتبني نمط حياة غذائي يعزز طاقتك وصحتك على المدى الطويل.
+                </p>
+                <div class="text-center">
+                    <a class="btn btn-success rounded-pill py-3 px-5 shadow-lg hover-shadow-lg" href="{{ url('/contactUs') }}">تواصل معنا</a>
                 </div>
             </div>
         </div>
+    </div>
+</div>
 
-
-
-        @include( "landingPage.components.footer")
+@endsection

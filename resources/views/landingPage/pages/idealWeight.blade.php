@@ -1,7 +1,7 @@
-@include("landingPage.components.head")
-@include("landingPage.components.spinner")
-@include("landingPage.components.topbar")
-@include("landingPage.components.navbar")
+@extends('land_page')
+@section('title', 'الوزن المثالي ')
+
+@section('content')
 
 <div class="container-fluid bg-breadcrumb">
     <div class="container text-center py-5" style="max-width: 900px;">
@@ -13,7 +13,6 @@
 <section>
     <div class="container my-5">
         <div class="row">
-            <!-- Ideal Weight Form -->
             <div class="col-md-6 text-center">
                 <div class="bmi-container text-center">
                     <h2 style="color: #E84256;">احسب الوزن المثالي</h2>
@@ -34,7 +33,6 @@
                     </form>
                 </div>
             </div>
-            <!-- Image next to the calculator -->
             <div class="col-md-6 d-flex justify-content-center align-items-center">
                 <img src="{{asset('assets_land/img/ideal1.jpg')}}" class="img-fluid" alt="Ideal Weight Calculation Image">
             </div>
@@ -52,7 +50,6 @@
         let gender = document.getElementById('gender').value;
         let idealWeight;
 
-        // Calculate ideal weight based on gender
         if (gender === 'male') {
             idealWeight = (height - 100) - ((height - 150) / 4);
         } else if (gender === 'female') {
@@ -62,12 +59,10 @@
             return;
         }
 
-        // Show result with SweetAlert
-        Swal.fire({
+    Swal.fire({
             title: `الوزن المثالي هو: ${idealWeight.toFixed(2)} كجم`,
             confirmButtonColor: '#E84256'
         });
     });
 </script>
-
-@include("landingPage.components.footer")
+@endsection

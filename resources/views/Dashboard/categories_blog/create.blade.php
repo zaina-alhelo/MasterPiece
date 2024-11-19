@@ -8,7 +8,6 @@
                 <div class="card-body">
                     <h5 class="card-title">Create Category</h5>
 
-                    <!-- Category Creation Form -->
                     <form method="POST" action="{{ route('categories_blog.store') }}" enctype="multipart/form-data" id="categoryForm">
                         @csrf
 

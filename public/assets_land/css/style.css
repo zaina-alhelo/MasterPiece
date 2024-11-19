@@ -1,3 +1,13 @@
+.success-stories h2 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+.story-card img {
+  transition: transform 0.3s ease;
+}
+.story-card img:hover {
+  transform: scale(1.05);
+}
 
 
         .image-container {
@@ -11,7 +21,10 @@
         .blog-image:hover {
             transform: scale(1.1);
       }
-
+  .swal2-container ul {
+      direction: rtl;
+      list-style-position: inside;
+  }
 /*** Spinner Start ***/
 /*** Spinner ***/
 #spinner {
@@ -411,7 +424,7 @@
 /*** Single Page Hero Header Start ***/
 .bg-breadcrumb {
     background: linear-gradient(rgba(0, 0, 0, .5),
-        rgba(0, 0, 0, 0.5)), url(../img/wiki.png);
+        rgba(0, 0, 0, 0.5)), url(../img/2.png);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -1255,11 +1268,11 @@ background: rgba(40, 167, 69, 0.6);}
 
 /*** Subscribe Start ***/
 .subscribe {
-    background: linear-gradient(rgba(19, 53, 123, .6), rgba(19, 53, 123, .6)), url(../img/subscribe-img.jpg);
+    background:  url(../img/1.png);
     background-attachment: fixed;
     background-position: center center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
 }
 
 .subscribe .subscribe-title {
@@ -1301,10 +1314,17 @@ background: rgba(40, 167, 69, 0.6);}
     color: var(--bs-white);
     transition: 0.5s;
 }
-
 .footer .footer-item a:hover {
-    letter-spacing: 2px;
-    color: var(--bs-primary);
+    color: #28a745; 
+    text-decoration: none;
+}
+
+.footer .footer-item a:hover i {    
+    color: #28a745; 
+}
+
+.footer .footer-item a:hover img {
+    transform: scale(1.05); 
 }
 
 /*** Footer End ***/

@@ -41,12 +41,12 @@ Category of Recipe
                                 </td>
                                 <td>{{ $category->created_at->format('Y/m/d') }}</td>
                                 <td>
-                                    <a href="{{ route('categories.edit', $category->id) }}" class="btn btn-primary">Edit</a>
-                                    <a href="{{ route('categories.show', $category->id) }}" class="btn btn-primary">show</a>
+                                    <a href="{{ route('categories.edit', $category->id) }}" class="btn btn-primary  btn-sm"><i class="bi bi-pencil"></i> Edit</a>
+                                    <a href="{{ route('categories.show', $category->id) }}" class="btn btn-warning btn-sm"><i class="bi bi-eye"></i> Show</a>
                                     <form action="{{ route('categories.destroy', $category->id) }}" method="POST" style="display:inline;" class="delete-form">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="button" class="btn btn-danger delete-button" data-category-name="{{ $category->category_name }}">Delete</button>
+                                        <button type="button" class="btn btn-danger btn-sm delete-button" data-category-name="{{ $category->category_name }}"> <i class="bi bi-trash"></i>  Delete</button>
                                     </form>
                                 </td>
                             </tr>
@@ -61,6 +61,8 @@ Category of Recipe
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
+            document.addEventListener('DOMContentLoaded', function() {
+
    document.querySelectorAll('.delete-button').forEach(button => {
         button.addEventListener('click', function() {
             const form = this.closest('.delete-form');
@@ -82,6 +84,8 @@ Category of Recipe
             });
         });
     });
+    });
+    
 
     setTimeout(function() {
         var successMessage = document.getElementById('successMessage');

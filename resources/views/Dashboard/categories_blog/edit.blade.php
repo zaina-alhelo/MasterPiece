@@ -8,7 +8,6 @@
                 <div class="card-body">
                     <h5 class="card-title">Edit Category</h5>
 
-                    <!-- Display validation errors -->
                     @if ($errors->any())
                         <div class="alert alert-danger">
                             <ul>
@@ -21,7 +20,7 @@
 
                     <form action="{{ route('categories_blog.update', $category->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
-                        @method('PUT') <!-- Use PUT method for updates -->
+                        @method('PUT') 
 
                         <div class="mb-3">
                             <label for="category_name" class="form-label">Category Name</label>
@@ -39,7 +38,6 @@
                             <small class="form-text text-muted">Leave blank to keep the current image.</small>
                         </div>
 
-                        <!-- Show current image if it exists -->
                         @if($category->image)
                         <div class="mb-3">
                             <label class="form-label">Current Image:</label><br>

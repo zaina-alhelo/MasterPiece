@@ -8,7 +8,6 @@
                 <div class="card-body">
                     <h5 class="card-title">Create User</h5>
 
-                    <!-- User Creation Form -->
                     <form method="POST" action="{{ route('users.store') }}" enctype="multipart/form-data" id="userForm">
                         @csrf
 
@@ -87,20 +86,21 @@
                             </div>
                         </div>
 
-                        <div class="row mb-3">
-                            <label for="age" class="col-sm-2 col-form-label">Age</label>
-                            <div class="col-sm-10">
-                                <input type="number" 
-                                       name="age" 
-                                       id="age" 
-                                       class="form-control" 
-                                       value="{{ old('age') }}" 
-                                       placeholder="Enter age">
-                                @if ($errors->has('age'))
-                                    <span class="text-danger"><li><i class="bi bi-exclamation-circle"></i> {{ $errors->first('age') }}</span>
-                                @endif
-                            </div>
-                        </div>
+                      <div class="row mb-3">
+    <label for="birthday" class="col-sm-2 col-form-label">Birthday</label>
+    <div class="col-sm-10">
+        <input type="date" 
+               name="birthday" 
+               id="birthday" 
+               class="form-control" 
+               value="{{ old('birthday') }}" 
+               placeholder="Enter your birthday">
+        @if ($errors->has('birthday'))
+            <span class="text-danger"><li><i class="bi bi-exclamation-circle"></i> {{ $errors->first('birthday') }}</span>
+        @endif
+    </div>
+</div>
+
 
                         <div class="row mb-3">
                             <label for="gender" class="col-sm-2 col-form-label">Gender</label>

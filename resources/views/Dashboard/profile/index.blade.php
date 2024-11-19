@@ -31,7 +31,6 @@ Profile
 
           <div class="card">
             <div class="card-body pt-3">
-              <!-- Bordered Tabs -->
               <ul class="nav nav-tabs nav-tabs-bordered">
 
                 <li class="nav-item">
@@ -98,7 +97,6 @@ Profile
 
                 <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
 
-                  <!-- Profile Edit Form -->
                   <form>
                     <div class="row mb-3">
                       <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Profile Image</label>
@@ -198,13 +196,12 @@ Profile
                     <div class="text-center">
                       <button type="submit" class="btn btn-primary">Save Changes</button>
                     </div>
-                  </form><!-- End Profile Edit Form -->
+                  </form>
 
                 </div>
 
                 <div class="tab-pane fade pt-3" id="profile-settings">
 
-                  <!-- Settings Form -->
                   <form>
 
                     <div class="row mb-3">
@@ -240,12 +237,11 @@ Profile
                     <div class="text-center">
                       <button type="submit" class="btn btn-primary">Save Changes</button>
                     </div>
-                  </form><!-- End settings Form -->
+                  </form>
 
                 </div>
 
                 <div class="tab-pane fade pt-3" id="profile-change-password">
-                  <!-- Change Password Form -->
                   <form>
 
                     <div class="row mb-3">
@@ -272,11 +268,11 @@ Profile
                     <div class="text-center">
                       <button type="submit" class="btn btn-primary">Change Password</button>
                     </div>
-                  </form><!-- End Change Password Form -->
+                  </form>
 
                 </div>
 
-              </div><!-- End Bordered Tabs -->
+              </div>
 
             </div>
           </div>

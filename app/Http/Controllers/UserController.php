@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\bmi;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -13,7 +15,7 @@ class UserController extends Controller
      */
     public function index()
     {
-           $users = User::all();
+    $users = User::where('role', 'user')->get();
         return view('Dashboard.users.index', compact('users'));
     }
 
@@ -29,48 +31,6 @@ class UserController extends Controller
     /**
      * Store a newly created resource in storage.
     */
-//    public function store(Request $request)
-//     {
-//         // Validate the request
-//         $request->validate([
-//             'name' => 'required|string|max:255',
-//             'email' => 'required|email|unique:users,email',
-//             'password' => 'required|string|min:8|confirmed',
-//             'role' => 'nullable|string',
-//             'age' => 'nullable|integer|min:0',
-//             'gender' => 'nullable|string|in:male,female',
-//             'weight' => 'nullable|numeric',
-//             'height' => 'nullable|numeric',
-//             'bio' => 'nullable|string',
-//             'profile_image' => 'nullable|file|mimes:jpg,jpeg,png|max:2048', 
-//             'phone_number' => 'nullable|string|max:15',
-//         ]);
-
-//         // Create a new user instance
-//         $user = new User();
-//         $user->name = $request->input('name');
-//         $user->email = $request->input('email');
-//         $user->password = bcrypt($request->input('password')); // Encrypt the password
-//         $user->role = $request->input('role', 'user'); // Default to 'user' if not set
-//         $user->age = $request->input('age');
-//         $user->gender = $request->input('gender');
-//         $user->weight = $request->input('weight');
-//         $user->height = $request->input('height');
-//         $user->bio = $request->input('bio');
-//         $user->phone_number = $request->input('phone_number');
-
-//         // Handle file upload
-//         if ($request->hasFile('profile_image')) {
-//             $filePath = $request->file('profile_image')->store('profile_images', 'public'); // Store in public/profile_images
-//             $user->profile_image = $filePath;
-//         }
-      
-//         // Save the user to the database
-//         $user->save();
-
-//         // Redirect with a success message
-//         return redirect()->route('users.index')->with('success', 'User created successfully!');
-//     }
 
 
 
@@ -82,7 +42,7 @@ public function store(Request $request)
             'email' => 'required|email|unique:users,email',
             'password' => 'required|min:8|confirmed',
             'role' => 'required|string',
-            'age' => 'required|integer|min:0',
+            'birthday' => 'nullable|date',
             'gender' => 'required|string|in:male,female',
             'weight' => 'required|numeric',
             'height' => 'required|numeric',
@@ -95,13 +55,13 @@ public function store(Request $request)
         $user->name = $request->input('name');
         $user->email = $request->input('email');
         $user->password = bcrypt($request->input('password'));
-        $user->role = $request->input('role', 'user'); 
-        $user->age = $request->input('age');
+        $user->role = $request->input('role', 'user');
         $user->gender = $request->input('gender');
         $user->weight = $request->input('weight');
         $user->height = $request->input('height');
         $user->bio = $request->input('bio');
         $user->phone_number = $request->input('phone_number');
+        $user->birthday = $request->input('birthday');
 
         if ($request->hasFile('profile_image')) {
             $file = $request->file('profile_image');
@@ -110,6 +70,11 @@ public function store(Request $request)
             $path = 'uploads/profile_images/';
             $file->move($path, $filename); 
             $user->profile_image = $path . $filename; 
+        }
+
+        if ($request->has('birthday')) {
+            $birthday = Carbon::parse($request->input('birthday'));
+            $user->age = $birthday->age;  
         }
 
         $user->save();
@@ -123,10 +88,21 @@ public function store(Request $request)
 
 
 
-    public function show(string $id)
-    {
-        //
-    }
+public function show($id) {
+    $user = User::findOrFail($id);
+    $bmiData = Bmi::where('user_id', $id)->orderBy('updated_at')->get();
+
+    $dates = $bmiData->pluck('updated_at')->map(function($date) {
+        return $date->format('Y-m-d');
+    });
+
+    $bmis = $bmiData->pluck('bmi');
+    $weights = $bmiData->pluck('weight');
+
+    return view('Dashboard.users.show', compact('user', 'dates', 'bmis', 'weights'));
+}
+
+
 
   
  public function edit($id)
@@ -135,26 +111,56 @@ public function store(Request $request)
         return view('Dashboard.users.edit', compact('user'));
     }
 
-    public function update(Request $request, $id)
-    {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users,email,' . $id,
-            'role' => 'nullable|string|max:50',
-            'age' => 'nullable|integer|min:0',
-            'gender' => 'nullable|string|max:10',
-            'weight' => 'nullable|numeric',
-            'height' => 'nullable|numeric',
-            'bio' => 'nullable|string',
-            'profile_image' => 'nullable|image|max:2048', 
-            'phone_number' => 'nullable|string|max:15',
-        ]);
+public function update(Request $request, $id)
+{
+    $request->validate([
+        'name' => 'required|string|max:255',
+        'email' => 'required|string|email|max:255|unique:users,email,' . $id,
+        'role' => 'nullable|string|max:50',
+        'birthday' => 'nullable|date',
+        'gender' => 'nullable|string|max:10',
+        'weight' => 'nullable|numeric',
+        'height' => 'nullable|numeric',
+        'bio' => 'nullable|string',
+        'profile_image' => 'nullable|image|max:2048',
+        'phone_number' => 'nullable|string|max:15',
+    ]);
 
-        $user = User::findOrFail($id); 
-        $user->update($request->all()); 
+    $user = User::findOrFail($id);
 
-        return redirect()->route('users.index')->with('success', 'User updated successfully!');
+    $data = $request->all();
+    if ($request->has('birthday')) {
+        $birthday = Carbon::parse($request->input('birthday'));
+        $data['age'] = $birthday->age;
     }
+    $user->update($data);
+
+    if ($request->has('weight') && $request->has('height') && $request->input('weight') && $request->input('height')) {
+        $weight = $request->input('weight');
+        $height = $request->input('height');
+        $heightInMeters = $height / 100;
+        $bmiValue = $weight / ($heightInMeters * $heightInMeters);
+
+        $lastBmi = Bmi::where('user_id', $user->id)->latest()->first();
+        $bmiChangePercentage = null;
+        if ($lastBmi) {
+            $bmiChangePercentage = (($bmiValue - $lastBmi->bmi) / $lastBmi->bmi) * 100;
+        }
+
+        Bmi::create([
+            'user_id' => $user->id,
+            'weight' => $weight,
+            'height' => $height,
+            'bmi' => $bmiValue,
+            'bmi_change_percentage' => $bmiChangePercentage,
+        ]);
+    }
+
+    return redirect()->route('users.index')->with('success', 'User updated successfully!');
+}
+
+
+
 
     public function destroy($id)
     {

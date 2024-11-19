@@ -10,7 +10,9 @@ class RecipeShowController extends Controller
 {
         public function index() {
     $categories = Category::all(); 
-    return view('landingPage.pages.recipe_cat.index', compact('categories'));
+        $recipes = Recipe::with(['category', 'recipeImages'])->limit(6)->get();
+
+    return view('landingPage.pages.recipe_cat.index', compact('categories', 'recipes'));
 }
 public function show($id) {
     $category = Category::findOrFail($id);
@@ -22,6 +24,8 @@ public function show($id) {
 public function recipe($id)
 {
     $recipe = Recipe::with('category', 'recipeImages')->findOrFail($id);
-    return view('landingPage.pages.recipe.show', compact('recipe'));
+        $recipes = Recipe::with(['category', 'recipeImages'])->limit(6)->get();
+
+    return view('landingPage.pages.recipe.show', compact('recipe','recipes'));
 }
-}
+}   

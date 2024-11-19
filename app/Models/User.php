@@ -24,6 +24,7 @@ use SoftDeletes;
         'email',
         'password',
         'age',
+        'birthday',
         'gender',
         'weight',
         'height',
@@ -44,6 +45,10 @@ use SoftDeletes;
 {
     return $this->hasMany(bmi::class);
 }
+  public function customNotifications()
+    {
+        return $this->hasMany(CustomNotification::class, 'notifiable_id')->where('notifiable_type', self::class);
+    }
 
     protected $hidden = [
         'password',

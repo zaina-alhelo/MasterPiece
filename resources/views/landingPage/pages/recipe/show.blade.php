@@ -1,7 +1,7 @@
-@include("landingPage.components.head")
-@include("landingPage.components.spinner")
-@include("landingPage.components.topbar")
-@include("landingPage.components.navbar")
+@extends('land_page')
+@section('title', $recipe->recipe_name )
+
+@section('content')
 
 <div class="container-fluid bg-breadcrumb">
     <div class="container text-center py-5" style="max-width: 900px;">
@@ -18,7 +18,6 @@
     <div class="row">
         <div class="col-md-8 mx-auto">
             <div class="card mb-4">
-                <!-- Display the first recipe image -->
                 @if($recipe->recipeImages->isNotEmpty())
                     <img src="{{ asset($recipe->recipeImages->first()->res_images) }}" class="card-img-top" alt="{{ $recipe->recipe_name }}">
                 @else
@@ -44,4 +43,4 @@
 </div>
 <!-- Recipe Show End -->
 
-@include("landingPage.components.footer")
+@endsection

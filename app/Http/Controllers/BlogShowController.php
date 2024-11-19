@@ -17,6 +17,8 @@ class BlogShowController extends Controller
       public function show($id)
     {
         $blog = Blog::findOrFail($id); 
-        return view('landingPage.pages.blogs.blog_show', compact('blog'));
+                $blogs = Blog::all();
+
+        return view('landingPage.pages.blogs.blog_show', compact('blog','blogs'));
     }
 }

@@ -40,13 +40,16 @@ Blogs
                                     @endif
                                 </td>
                                 <td>
-                                    <a href="{{ route('blogs.edit', $blog->id) }}" class="btn btn-warning btn-sm">Edit</a>
-                                    <a href="{{ route('blogs.show', $blog->id) }}" class="btn btn-info btn-sm">Show</a>
+                                    <a href="{{ route('blogs.edit', $blog->id) }}" class="btn btn-primary btn-sm">        <i class="bi bi-pencil"></i> Edit
+</a>
+                                    <a href="{{ route('blogs.show', $blog->id) }}" class="btn btn-warning btn-sm">    <i class="bi bi-eye"></i> Show
+</a>
 
                                     <form action="{{ route('blogs.destroy', $blog->id) }}" method="POST" style="display:inline;" class="delete-form">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="button" class="btn btn-danger delete-button" data-blog-title="{{ $blog->title }}">Delete</button>
+                                        <button type="button" class="btn btn-danger btn-sm delete-button" data-blog-title="{{ $blog->title }}">            <i class="bi bi-trash"></i> Delete
+</button>
                                     </form>
                                 </td>
                             </tr>
@@ -61,6 +64,8 @@ Blogs
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
+            document.addEventListener('DOMContentLoaded', function() {
+
    document.querySelectorAll('.delete-button').forEach(button => {
         button.addEventListener('click', function() {
             const form = this.closest('.delete-form');
@@ -81,6 +86,7 @@ Blogs
                 }
             });
         });
+    });
     });
 
     setTimeout(function() {

@@ -11,13 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('bmis', function (Blueprint $table) {
-            $table->id();
+        $table->id();
              $table->foreignId('user_id')->constrained()->onDelete('cascade'); 
             $table->float('weight'); 
             $table->float('height'); 
             $table->float('bmi'); 
-            $table->timestamps();
+            $table->timest   Schema::create('bmis', function (Blueprint $table) {
+         amps();
         });
     }
 

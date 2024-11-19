@@ -1,62 +1,57 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>{{ config('app.name', 'Laravel') }}</title>
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-</head>
-<body class="bg-[#D7EBD9] flex items-center justify-center min-h-screen">
-    <div class="w-full sm:max-w-md p-6 bg-white shadow-md rounded-lg">
-        <h2 class="text-center text-2xl font-bold text-[#E84256] mb-6">{{ __('Log in') }}</h2>
+@extends('layout')
 
-        @if ($errors->any())
-            <div class="mb-4 text-red-600">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
+@section('title', 'تسجيل الدخول')
 
-        <form method="POST" action="{{ route('login') }}">
-            @csrf
-
-            <div class="mb-4">
-                <label for="email" class="block text-sm text-gray-700">{{ __('Email') }}</label>
-                <input id="email" type="email" name="email" value="{{ old('email') }}" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-[#E84256] focus:ring focus:ring-[#E84256] focus:ring-opacity-50" autofocus>
-            </div>
-
-            <div class="mb-4">
-                <label for="password" class="block text-sm text-gray-700">{{ __('Password') }}</label>
-                <input id="password" type="password" name="password" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-[#E84256] focus:ring focus:ring-[#E84256] focus:ring-opacity-50">
-            </div>
-
-            <div class="block mt-4">
-                <label for="remember_me" class="inline-flex items-center">
-                    <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-[#E84256] shadow-sm focus:border-[#E84256] focus:ring focus:ring-[#E84256] focus:ring-opacity-50" name="remember">
-                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-                </label>
-            </div>
-
-            <div class="flex items-center justify-between mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
-                    {{ __('Forgot your password?') }}
-                </a>
-                <button type="submit" class="bg-[#E84256] text-white px-4 py-2 rounded-md hover:bg-red-600">
-                    {{ __('Log in') }}
-                </button>
-            </div>
-        </form>
-
-        <div class="mt-6 text-center">
-            <p class="text-sm text-gray-600">{{ __("Don't have an account?") }}</p>
-            <a href="{{ route('register') }}" class="text-[#E84256] underline hover:text-red-600">{{ __('Create one') }}</a>
-        </div>
+@section('content')
+<div class="container-fluid bg-dark py-5">
+    <div class="container text-center py-5 " style="max-width: 1000px;">
+        <h3 class="display-4 mb-4 mt-4 " style="color:#E84256">تسجيل الدخول</h3>
     </div>
-</body>
-</html>
+</div>
+
+<div class="container py-5" style="max-width: 500px;">
+
+    <form method="POST" action="{{ route('login') }}" class="bg-white shadow-lg p-4 rounded-lg">
+        @csrf
+<div class="mb-4 rtl">
+    <label for="email" class="form-label">البريد الإلكتروني</label>
+    <input type="email" id="email" name="email" 
+           class="form-control @error('email') is-invalid @enderror" 
+           value="{{ old('email') }}">
+    @error('email')
+        <small class="text-danger d-block mt-1">{{ $message }}</small>
+    @enderror
+</div>
+
+<div class="mb-4 rtl">
+    <label for="password" class="form-label">كلمة المرور</label>
+    <input type="password" id="password" name="password" 
+           class="form-control @error('password') is-invalid @enderror">
+    @error('password')
+        <small class="text-danger d-block mt-1">{{ $message }}</small>
+    @enderror
+</div>
+
+        <div class="block mt-4 rtl">
+            <label for="remember_me" class="inline-flex items-center">
+                <input id="remember_me" type="checkbox" name="remember" class="rounded border-gray-300 text-[#E84256] shadow-sm focus:border-[#E84256] focus:ring focus:ring-[#E84256] focus:ring-opacity-50">
+                <span class="ml-2 text-sm text-gray-600">{{ __('تذكرني') }}</span>
+            </label>
+        </div>
+
+        <div class="flex items-center justify-between mt-4 rtl">
+            <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
+                {{ __('هل نسيت كلمة المرور؟') }}
+            </a>
+            <button type="submit" class="btn btn-success w-100 py-2 mt-4" style="background-color: #E84256; border: none; border-radius: 25px;">{{ __('تسجيل الدخول') }}</button>
+        </div>
+        
+          <div class="mt-4 text-center">
+    <a class="text-muted mb-2">{{ __("لا تملك حساباً؟") }}</a>
+    <a href="{{ route('register') }}" class="text-decoration text-danger fw-bold">
+        {{ __('أنشئ حساباً') }}
+    </a>
+</div>
+    </form>
+</div>
+@endsection

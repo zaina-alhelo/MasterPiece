@@ -36,7 +36,7 @@ class BlogController extends Controller
     $request->validate([
         'title' => 'required|string|max:255',
         'content' => 'required|string',
-        'description' => 'nullable|string', // Add description validation
+        'description' => 'nullable|string', 
         'category_id' => 'required|exists:blog__categories,id',
         'image' => 'nullable|image|mimes:jpeg,png,jpg',
     ]);
@@ -83,7 +83,7 @@ public function edit($id)
     $request->validate([
         'title' => 'required|string|max:255',
         'content' => 'required|string',
-        'description' => 'nullable|string', // Add description validation
+        'description' => 'nullable|string', 
         'category_id' => 'required|exists:blog__categories,id',
         'image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
     ]);
@@ -92,7 +92,7 @@ public function edit($id)
     
     $blog->title = $request->title;
     $blog->content = $request->content;
-    $blog->description = $request->description; // Update description
+    $blog->description = $request->description; 
     $blog->category_id = $request->category_id;
 
     if ($request->hasFile('image')) {
