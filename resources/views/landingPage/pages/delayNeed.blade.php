@@ -4,12 +4,11 @@
 @section('content')
 <div class="container-fluid bg-breadcrumb">
     <div class="container text-center py-5" style="max-width: 900px;">
-        <h3 class="text-white display-3 mb-4">حاسبة الاحتياجات اليومية من السعرات الحرارية</h3>
+        <h3 class="text-white display-3 mb-4">حاسبة الاحتياجات اليومية   </h3>
     </div>
 </div>
-
-<section   style="background-color: #f4f9fb;">
-    <div class="container py-5 ">
+<section class="bg-light">
+    <div class="container py-5">
         <h2 class="text-center" style="color: #E84256;">كيف تعمل الحاسبة؟</h2>
         <p class="text-center">
             تقوم حاسبة الاحتياجات اليومية من السعرات الحرارية بحساب السعرات اللازمة لجسمك بناءً على 
@@ -17,12 +16,12 @@
             استخدم هذه المعلومات لتحديد احتياجاتك اليومية وتخطيط نظامك الغذائي بشكل أفضل.
         </p>
 
-        <div class="row">
-            <div class="col-md-8 container my-5 text-center">
-                <div class="caloric-needs-container text-center">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="caloric-needs-container text-center bmi-container">
                     <h2 style="color: #E84256;">احسب احتياجاتك اليومية من السعرات الحرارية</h2>
                     <form id="dailyNeedsForm">
-                        <div class="caloric-needs-container text-center">
+                        <div class="mb-3">
                             <label for="age" class="form-label">العمر</label>
                             <input type="number" class="form-control text-center" id="age" required>
                         </div>
@@ -66,6 +65,7 @@
         </div>
     </div>
 </section>
+
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
@@ -130,21 +130,12 @@ if (goal === 'lose') {
 }
 
 
-        const nutritionalInfo = `
-            <strong style="color: #E84256;"> : المغذيات اليومية المقترحة</strong><br>
-            <ul style="text-align: right; padding-right: 0;">   
-                <li><strong style="color: #E84256;">البروتين:</strong> ${protein.toFixed(2)} جرام - لبناء العضلات</li>
-                <li><strong style="color: #E84256;">الكربوهيدرات:</strong> ${carbs.toFixed(2)} جرام - لمصدر الطاقة الرئيسي</li>
-                <li><strong style="color: #E84256;">الدهون:</strong> ${fats.toFixed(2)} جرام - لامتصاص الفيتامينات والطاقة</li>
-            </ul>
-        `;
-
         Swal.fire({
             title: 'احتياجاتك اليومية من السعرات',
             html: `
               <b style="color: #E84256;">تحتاج إلى ${dailyCalories.toFixed(2)}   سعر حراري يوميًا</b>  <br><br>
-                ${advice}<br>
-                ${nutritionalInfo}
+                ${advice}
+               
             `,
             icon: 'info',
             confirmButtonText: 'موافق',

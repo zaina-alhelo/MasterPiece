@@ -1,25 +1,27 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use App\Models\Blog;
-use App\Models\bmi;
+use App\Models\Bmi;
 use App\Models\Recipe;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
-
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
-     public function index()
+   public function index()
     {
-        $usersCount = User::count(); 
-        $articlesCount = Blog::count(); 
-        $recipesCount = Recipe::count(); 
+        $usersCount = User::count();
+        $articlesCount = Blog::count();
+        $recipesCount = Recipe::count();
+    $today = now()->format('Y-m-d');
 
-  
-  $genderStats = User::select(DB::raw('gender, COUNT(*) as count'))
+
+    $bmis = Bmi::with('user')
+        ->whereDate('created_at', $today)
+        ->get();
+        $genderStats = User::select(DB::raw('gender, COUNT(*) as count'))
             ->groupBy('gender')
             ->get();
 
@@ -29,9 +31,15 @@ class DashboardController extends Controller
                 'value' => $item->count
             ];
         });
-          $bmiStats = DB::table('bmis')
+
+        $bmiStats = DB::table('bmis')
             ->join('users', 'bmis.user_id', '=', 'users.id')
-            ->select(DB::raw('users.gender, bmis.age_group, AVG(bmis.bmi_change_percentage) as avg_bmi_change'))
+            ->select(
+                DB::raw('users.gender, 
+                         bmis.age_group, 
+                         AVG(bmis.bmi_change_percentage) as avg_bmi_change,
+                         AVG(bmis.bmi) as avg_bmi')
+            )
             ->groupBy('users.gender', 'bmis.age_group')
             ->get();
 
@@ -39,9 +47,18 @@ class DashboardController extends Controller
             return [
                 'gender' => $item->gender,
                 'age_group' => $item->age_group,
-                'avg_bmi_change' => $item->avg_bmi_change
+                'avg_bmi_change' => round($item->avg_bmi_change, 2),
+                'avg_bmi' => round($item->avg_bmi, 2)
             ];
         });
-    return view('Dashboard.dashboard', compact('usersCount', 'articlesCount', 'recipesCount', 'genderData','bmiData'));
-}
+
+        return view('Dashboard.dashboard', compact(
+            'usersCount', 
+            'articlesCount', 
+            'recipesCount', 
+            'genderData', 
+            'bmiData', 
+            'bmis'
+        ));
+    }
 }

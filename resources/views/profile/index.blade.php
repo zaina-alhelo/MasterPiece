@@ -12,16 +12,24 @@
         </ol>    
     </div>
 </div>
+<section class=" bg-light pt-4">
 
-<div class="container-xl px-4 mt-4">
-    <nav class="nav nav-borders rtl">
-        <a class="nav-link" href="">الملف الشخصي</a>
-        <a class="nav-link active" href="{{ route('messages.index') }}">الرسائل</a>
-    </nav>
+<div class="container-xl px-4  ">
+<nav class="nav nav-pills nav-fill rtl">
+    <a class="nav-link active" href="">
+        الملف الشخصي
+    </a>
+    <a class="nav-link" href="{{ route('messages.index') }}">
+        الرسائل
+    </a>
+</nav>
+
+
+    <hr class="mt-0 mb-4">
     <hr class="mt-0 mb-4">
     <div class="row">
         <div class="col-xl-4">
-            <div class="card mb-4 shadow" style="background-color: #f8f9fa;">
+            <div class="card mb-4 shadow" >
                 <div class="card-header text-center bg-success text-white">صورة الملف الشخصي</div>
                 <div class="card-body text-center">
                     <h4 class="mt-2 mb-3">{{ $user->name }}</h4>
@@ -31,7 +39,7 @@
                         <img class="img-account-profile rounded-circle mb-2" src="{{asset('assets_land/img/profile.jpg')}}" alt="صورة الملف الشخصي الافتراضية" style="width: 150px; height: 150px;">
                     @endif
                     <div class="small font-italic text-muted mb-4">
-                        <h5>حول</h5> 
+                        <h5>معلوماتي</h5> 
                         <p>{{ $user->bio }}</p>
                     </div>
                     <div class="mt-4">
@@ -51,7 +59,7 @@
                     </div>
 
                     <div class="mt-4">
-                        <h5>الشروط الصحية</h5>
+                        <h5>الحالة الصحية</h5>
                         <p>
                             @if($user->user_conditions)
                                 {{ implode(', ', explode(',', $user->user_conditions)) }}
@@ -75,9 +83,9 @@
             </div>
         </div>
 
-        <div class="col-xl-8">
+        <div class="col-xl-8 ">
             @if(request()->is('messages'))
-                <div class="container">
+                <div class="container rtl">
                     <h2>رسائلك</h2>
                     <div class="messages">
                         @foreach ($messages as $message)
@@ -125,7 +133,7 @@
                             </div>
    <div class="mb-3 rtl">
                                 <label class="small mb-1" for="bio">السيرة الذاتية</label>
-                                <textarea class="form-control" id="bio" name="bio">{{ $user->bio }}</textarea>
+                                <textarea class="form-control" id="bio" name="bio" placeholder="أكتب معلومات مهمة تخصك للأخصائي">{{ $user->bio }}</textarea>
                             </div>
 
                        <div class="mb-3 rtl">
@@ -177,6 +185,7 @@
         </div>
     </div>
 </div>
+</section>
 
 @include("landingPage.components.footer")
 

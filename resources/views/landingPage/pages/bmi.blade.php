@@ -12,7 +12,7 @@
     </div>
 </div>
 
-<section  style="background-color: #f4f9fb;">
+<section  class="bg-light">
     <div class="container py-5 ">
         <div class="row">
             <!-- BMI Form -->

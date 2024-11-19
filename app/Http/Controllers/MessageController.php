@@ -135,6 +135,24 @@ public function show($id)
 }
 
 
+public function sendMessage(Request $request)
+{
+    $message = Message::create([
+        'sender_id' => Auth::id(),
+        'receiver_id' => $request->receiver_id,
+        'message_content' => $request->message_content,
+    ]);
 
+    CustomNotification::create([
+        'type' => 'message',
+        'notifiable_id' => $request->receiver_id,
+        'notifiable_type' => 'App\Models\User',
+        'message_id' => $message->id,
+        'sender_id' => Auth::id(),
+        'message_content' => $request->message_content,
+    ]);
+
+    return redirect()->back()->with('success', 'Message sent and notification created.');
+}
 
 }

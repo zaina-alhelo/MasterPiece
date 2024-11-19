@@ -3,7 +3,7 @@
     <div class="container py-5">
         <div class="mx-auto text-center mb-5" style="max-width: 900px;">
             <h5 class="section-title px-3">استكشف الوصفات</h5>
-            <h1 class="mb-4">عالم الوصفات المتنوعة</h1>
+            <h1 class="mb-4">عالم الوصفات الصحية</h1>
             <p class="mb-0">استمتع بتجربة مجموعة متنوعة من الوصفات الشهية من جميع أنحاء العالم، تم إعدادها بعناية لتلبي ذوقك وتثري مائدتك!</p>
         </div>
 

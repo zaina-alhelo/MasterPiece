@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap');
+
+
+
 .success-stories h2 {
   font-size: 2rem;
   font-weight: bold;
@@ -96,20 +100,20 @@
 }
 
 .btn.btn-primary {
-    box-shadow: inset 0 0 0 0 var(--bs-primary);
+    box-shadow: inset 0 0 0 0 #198754;
 }
 
 .btn.btn-primary:hover {
     box-shadow: inset 300px 0 0 0 var(--bs-light) !important;
-    color: var(--bs-primary) !important;
+    color: #198754 !important;
 }
 
 .btn.btn-light {
-    box-shadow: inset 0 0 0 0 var(--bs-primary);
+    box-shadow: inset 0 0 0 0 #198754;
 }
 
 .btn.btn-light:hover {
-    box-shadow: inset 300px 0 0 0 var(--bs-primary);
+    box-shadow: inset 300px 0 0 0 #198754;
     color: var(--bs-light) !important;
 }
 
@@ -126,7 +130,7 @@
     position: relative;
     display: inline-block;
     text-transform: uppercase;
-    color: var(--bs-primary);
+    color: #198754;
 }
 
 .section-title::before {
@@ -137,7 +141,7 @@
     right: 0;
     transform: translateY(-50%);
     margin-right: -50px;
-    border: 1px solid var(--bs-primary) !important;
+    border: 1px solid #198754 !important;
 }
 
 .section-title::after {
@@ -148,7 +152,7 @@
     left: 0;
     transform: translateY(-50%);
     margin-left: -50px;
-    border: 1px solid var(--bs-primary) !important;
+    border: 1px solid #198754 !important;
 }
 
 
@@ -159,7 +163,7 @@
 
 .topbar {
     padding: 2px 10px 2px 20px;
-    background: var(--bs-primary) !important;
+    background: #198754 !important;
 }
 
 .topbar a,
@@ -208,7 +212,7 @@
 }
 
 .sticky-top.navbar-light .navbar-brand h1 {
-    color: var(--bs-primary);
+    color: #198754;
 }
 
 .navbar-light .navbar-brand img {
@@ -244,7 +248,7 @@
 }
 
 .dropdown .dropdown-menu a:hover {
-    background: var(--bs-primary);
+    background: #198754;
     color: var(--bs-white);
 }
 
@@ -263,13 +267,13 @@
     }
 
     .navbar-light .navbar-brand h1 {
-        color: var(--bs-primary);
+        color: #198754;
     }
 
     .navbar.navbar-expand-lg .navbar-toggler {
         padding: 10px 20px;
-        border: 1px solid var(--bs-primary);
-        color: var(--bs-primary);
+        border: 1px solid #198754;
+        color: #198754;
     }
 
     .navbar-light .navbar-collapse {
@@ -285,7 +289,7 @@
 
     .navbar-light .navbar-nav .nav-link:hover,
     .navbar-light .navbar-nav .nav-link.active  {
-        color: var(--bs-primary) !important;
+        color: #198754 !important;
     }
 
     .navbar-light .navbar-brand img {
@@ -315,7 +319,7 @@
         height: 0;
         bottom: -1px;
         left: 0;
-        background: var(--bs-primary);
+        background: #198754;
         transition: .5s;
         z-index: -1;
     }
@@ -443,7 +447,7 @@
     position: relative;
     display: inline-block;
     text-transform: uppercase;
-    color: var(--bs-primary);
+    color: #198754;
 }
 
 .about .container .section-about-title::before {
@@ -454,138 +458,38 @@
     right: 0;
     transform: translateY(-50%);
     margin-right: -50px;
-    border: 1px solid var(--bs-primary) !important;
+    border: 1px solid #198754 !important;
 }
 /*** About End ***/
 
 
-/*** Services Start ***/
-.service .service-content-inner {
-    transition: 0.5s;
-}
-.service .service-content-inner:hover {
-    position: relative;
-    background: var(--bs-primary) !important;
-}
-
-.service .service-content-inner .service-content h5,
-.service .service-content-inner .service-content p,
-.service .service-content-inner .service-icon i {
-    transition: 0.5s;
-}
-
-.service .service-content-inner:hover .service-content h5,
-.service .service-content-inner:hover .service-content p,
-.service .service-content-inner:hover .service-icon i {
-    color: var(--bs-white) !important;
-}
-/*** Service End ***/
-
-
-/*** Destination Start ***/
-.destination .tab-class .tab-content .tab-pane .destination-img {
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px;
-    z-index: 1;
-}
-
-.destination .tab-class .tab-content .tab-pane .destination-img .destination-overlay {
-    position: absolute;
-    bottom: -100%;
-    left: 0;
-    z-index: 3;
-    transition: 0.5s;
-}
-
-.destination .tab-class .tab-content .tab-pane .destination-img .search-icon {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    right: 0;
-    display: flex;
-    justify-content: end;
-    padding: 20px 20px 0 0;
-    background: rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    transition: 0.5s;
-
-}
-
-.destination .tab-class .tab-content .tab-pane .destination-img .search-icon a i {
-    opacity: 0;
-    transition: 0.5s;
-}
-
-.destination .tab-class .nav-item {
-    padding: 0 0 20px 0;
-}
-.destination .tab-class .nav-item a.active {
-    background: var(--bs-primary) !important;
-}
-
-.destination .tab-class .nav-item a.active span {
-    color: var(--bs-white) !important;
-}
-
-.destination .tab-class .tab-content .destination-img:hover .search-icon {
-    background: rgba(19, 53, 123, 0.4);
-}
-
-.destination .tab-class .tab-content .destination-img:hover .destination-overlay {
-    bottom: 0;
-}
-
-.destination .tab-class .tab-content .destination-img:hover .search-icon a i {
-    opacity: 1;
-}
-
-.destination .tab-class .tab-content .destination-img img {
-    transition: 0.5s;
-}
-
-.destination .tab-class .tab-content .destination-img:hover img {
-    transform: scale(1.2);
-}
-/*** Destination End ***/
 
                                 .bmi-container {
                                     margin: 100px auto;
                                     max-width: 500px;
                                     padding: 30px;
-                                    /* Increased padding for better spacing */
                                     background-color: #fff;
                                     border-radius: 15px;
-                                    /* Slightly larger border radius for smoother corners */
                                     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-                                    /* Increased shadow for a more pronounced effect */
                                     transition: box-shadow 0.3s ease;
-                                    /* Smooth transition for hover effect */
                                 }
                 
                                 .bmi-container:hover {
                                     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-                                    /* Darker shadow on hover */
                                 }
                 
                                 .bmi-container h2 {
                                     color: #E84256;
-                                    /* Keep the heading color */
                                     margin-bottom: 20px;
-                                    /* Space below the heading */
                                 }
                 
                                 .bmi-container .form-label {
                                     font-weight: bold;
-                                    /* Make label text bold for better readability */
                                 }
                 
                                 .bmi-container .btn {
                                     width: 100%;
-                                    /* Full-width button for better usability */
                                     font-weight: bold;
-                                    /* Bold text for the button */
                                 }
 /*** Packages Start ***/
 .packages .packages-item .packages-img {
@@ -656,7 +560,7 @@ border-color: rgba(34, 139, 34, 0.6) rgba(34, 139, 34, 0.6) rgba(34, 139, 34, 0.
     left: 50%; 
     transform: translateX(-50%);
     display: inline-block;
-    background: var(--bs-primary);
+    background: #198754;
     color: var(--bs-white);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px; 
@@ -672,7 +576,7 @@ border-color: rgba(34, 139, 34, 0.6) rgba(34, 139, 34, 0.6) rgba(34, 139, 34, 0.
     top: -50px;
     left: 0;
     padding: 5px 30px;
-    border: 1px solid var(--bs-primary);
+    border: 1px solid #198754;
     border-radius: 30px;
     transition: 0.5s;
 }
@@ -682,21 +586,21 @@ border-color: rgba(34, 139, 34, 0.6) rgba(34, 139, 34, 0.6) rgba(34, 139, 34, 0.
     top: -50px;
     right: 0;
     padding: 5px 30px;
-    border: 1px solid var(--bs-primary);
+    border: 1px solid #198754;
     border-radius: 30px;
     transition: 0.5s;
 }
 
 .packages .packages-carousel .owl-nav .owl-prev i,
 .packages .packages-carousel .owl-nav .owl-next i {
-    color: var(--bs-primary);
+    color: #198754;
     font-size: 17px;
     transition: 0.5s;
 }
 
 .packages .packages-carousel .owl-nav .owl-prev:hover,
 .packages .packages-carousel .owl-nav .owl-next:hover {
-    background: var(--bs-primary);
+    background: #198754;
 }
 
 .packages .packages-carousel .owl-nav .owl-prev:hover i,
@@ -706,12 +610,12 @@ border-color: rgba(34, 139, 34, 0.6) rgba(34, 139, 34, 0.6) rgba(34, 139, 34, 0.
 /*** Packages End ***/
 
 
-/*** Explore Tour Start ***/
+/*** recipes Tour Start ***/
 .ExploreTour .tab-class .nav-item {
     padding: 0 0 20px 0;
 }
 .ExploreTour .tab-class .nav-item a.active {
-    background: var(--bs-primary) !important;
+    background: #198754 !important;
 }
 
 .ExploreTour .tab-class .nav-item a.active span {
@@ -779,7 +683,7 @@ background: rgba(40, 167, 69, 0.6);}
     border-top-left-radius: 20px;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 80px;
-    background: var(--bs-primary);
+    background: #198754;
     color: var(--bs-white);
 }
 
@@ -807,7 +711,7 @@ background: rgba(40, 167, 69, 0.6);}
     border-top-left-radius: 20px;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 80px;
-    background: var(--bs-primary);
+    background: #198754;
     color: var(--bs-white);
 }
 
@@ -867,225 +771,19 @@ background: rgba(40, 167, 69, 0.6);}
     width: 15px;
     height: 15px;
     background: var(--bs-light);
-    border: 1px solid var(--bs-primary);
+    border: 1px solid #198754;
     border-radius: 10px;
     transition: 0.5s;
 }
 
-.ExploreTour #InternationalTab-2 .InternationalTour-carousel .owl-dot.active {
-    width: 40px;
-    background: var(--bs-primary);
-}
+
 /*** Explore Tour End ***/
 
 
-/*** Gallery Start ***/
-.gallery .gallery-item {
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px;
-}
-
-.gallery .gallery-item img {
-    min-height: 300px;
-    object-fit: cover;
-}
-
-.gallery .gallery-item .gallery-content {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    bottom: 0;
-    left: 0;
-    padding: 15px;
-    background: rgba(0, 0, 0, 0.3);
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-    transition: 0.5s;
-}
-
-.gallery .gallery-item .gallery-content .gallery-info {
-    position: relative;
-    margin-bottom: -100%;
-    opacity: 0;
-    transition: 0.5s;
-}
-
-.gallery .gallery-item .gallery-plus-icon {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    transition: 0.5s;
-    opacity: 0;
-}
-
-.gallery .gallery-item:hover .gallery-content .gallery-info,
-.gallery .gallery-item:hover .gallery-plus-icon {
-   opacity: 1;
-   margin: 0;
-}
-
-.gallery .gallery-item img {
-    transition: 0.5s;
-}
-
-.gallery .gallery-item:hover img {
-    transform: scale(1.2);
-}
-
-.gallery .gallery-item:hover .gallery-content {
-    background: rgba(19, 53, 123, 0.8);
-}
-
-.gallery .tab-class .nav-item {
-    padding: 0 0 20px 0;
-}
-.gallery .tab-class .nav-item a.active {
-    background: var(--bs-primary) !important;
-}
-
-.gallery .tab-class .nav-item a.active span {
-    color: var(--bs-white) !important;
-}
-
-/*** Gallery End ***/
-
-/*** Tour Booking Start ***/
-.booking {
-    background: linear-gradient(rgba(19, 53, 123, .8), rgba(19, 53, 123, .8)), url(../img/tour-booking-bg.jpg);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    
-}
-
-
-.booking .container .section-booking-title {
-    position: relative;
-    display: inline-block;
-    text-transform: uppercase;
-    color: var(--bs-white);
-}
-
-.booking .container .section-booking-title::before {
-    content: "";
-    width: 50px;
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
-    margin-right: -50px;
-    border: 1px solid var(--bs-white) !important;
-}
-
-.booking .container form .btn.btn-primary {
-    box-shadow: inset 0 0 0 0 var(--bs-primary);
-}
-
-.booking .container form .btn.btn-primary:hover {
-    box-shadow: inset 800px 0 0 0 var(--bs-light) !important;
-    color: var(--bs-primary) !important;
-}
 
 
 
-/*** Tour Booking end ***/
-
-/*** Travel Guide Start ***/
-.guide .guide-item .guide-img {
-    position: relative;
-}
-
-.guide .guide-item .guide-img .guide-icon {
-    position: absolute;
-    bottom: 0; 
-    left: 50%; 
-    transform: translate(-50%, -50%);
-    margin-bottom: -50px;
-    display: flex;
-    justify-content: center;
-    border: 1px solid var(--bs-primary);
-    background: var(--bs-light);
-    z-index: 9;
-}
-
-.guide .guide-item .guide-img .guide-img-efects {
-    position: relative;
-    overflow: hidden;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
-}
-
-.guide .guide-item .guide-img .guide-img-efects::after {
-    content: "";
-    width: 100%;
-    height: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transition: 0.5s;
-}
-
-.guide .guide-item:hover .guide-img-efects::after {
-    height: 100%;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
-    background: rgba(19, 53, 123, .5);
-}
-
-.guide .guide-item .guide-img-efects img {
-    transition: 0.5s;
-}
-.guide .guide-item:hover .guide-img-efects img {
-    transform: scale(1.1);
-}
-
-.guide .guide-item .guide-title {
-    position: relative;
-    background: var(--bs-light);
-    transition: 0.5s;
-}
-
-.guide .guide-item .guide-title::after {
-    content: "";
-    width: 100%;
-    height: 0;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px;
-    transition: 0.5s;
-}
-
-.guide .guide-item:hover .guide-title::after {
-    height: 100%;
-    background: var(--bs-primary) !important;
-    color: var(--bs-white);
-}
-
-.guide .guide-item .guide-title .guide-title-inner,
-.guide .guide-item:hover .guide-title .guide-title-inner h4 {
-    transition: 0.5s;
-}
-
-.guide .guide-item:hover .guide-title .guide-title-inner {
-    position: relative;
-    color: var(--bs-white) !important;
-    z-index: 2;
-}
-
-.guide .guide-item:hover .guide-title .guide-title-inner h4 {
-    color: var(--bs-white);
-}
-/*** Travel Guide End ***/
-
-
-/*** Blog Start ***/
+/*** services Start ***/
 .blog .blog-item .blog-img {
     position: relative;
 }
@@ -1105,19 +803,14 @@ background: rgba(40, 167, 69, 0.6);}
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
     overflow: hidden;
-        /* إخفاء أي جزء من الصورة يتجاوز الأبعاد المحددة */
         height: 200px;
-        /* تعيين ارتفاع ثابت */
 }
 .blog .blog-item .blog-img .blog-img-inner img{
     width: 100%;
-    /* تأكد من أن الصورة تملأ العنصر */
     height: 100%;
-    /* تعيين ارتفاع الصورة لتملأ العنصر */
     object-fit: cover;
-    /* جعل الصورة تغطي العنصر دون تشويه */
     transition: transform 0.5s;
-    /* تأثير الانتقال عند التحويم */}
+}
 
 .blog .blog-item .blog-img .blog-img-inner .blog-icon {
     position: absolute;
@@ -1176,7 +869,7 @@ background: rgba(40, 167, 69, 0.6);}
     height: 100px; 
     top: 0; left: 50%; 
     transform: translate(-50%, -50%);
-    border: 3px solid var(--bs-primary); 
+    border: 3px solid #198754; 
     border-style: dotted;
     border-radius: 50%;
 }
@@ -1195,14 +888,14 @@ background: rgba(40, 167, 69, 0.6);}
     width: 15px;
     height: 15px;
     background: var(--bs-light);
-    border: 1px solid var(--bs-primary);
+    border: 1px solid #198754;
     border-radius: 10px;
     transition: 0.5s;
 }
 
 .testimonial .testimonial-carousel .owl-dot.active {
     width: 40px;
-    background: var(--bs-primary);
+    background: #198754;
 }
 
 .testimonial .testimonial-carousel .owl-nav .owl-prev {
@@ -1210,7 +903,7 @@ background: rgba(40, 167, 69, 0.6);}
     top: -55px;
     left: 0;
     padding: 5px 30px;
-    border: 1px solid var(--bs-primary);
+    border: 1px solid #198754;
     border-radius: 30px;
     transition: 0.5s;
 }
@@ -1220,21 +913,21 @@ background: rgba(40, 167, 69, 0.6);}
     top: -55px;
     right: 0;
     padding: 5px 30px;
-    border: 1px solid var(--bs-primary);
+    border: 1px solid #198754;
     border-radius: 30px;
     transition: 0.5s;
 }
 
 .testimonial .testimonial-carousel .owl-nav .owl-prev i,
 .testimonial .testimonial-carousel .owl-nav .owl-next i {
-    color: var(--bs-primary);
+    color: #198754;
     font-size: 17px;
     transition: 0.5s;
 }
 
 .testimonial .testimonial-carousel .owl-nav .owl-prev:hover,
 .testimonial .testimonial-carousel .owl-nav .owl-next:hover {
-    background: var(--bs-primary);
+    background: #198754;
 }
 
 .testimonial .testimonial-carousel .owl-nav .owl-prev:hover i,
@@ -1243,7 +936,7 @@ background: rgba(40, 167, 69, 0.6);}
 }
 
 .testimonial .testimonial-carousel .owl-item.center .testimonial-item .testimonial-comment {
-    background: var(--bs-primary) !important;
+    background: #198754 !important;
     color: var(--bs-white);
     transition: 0.5s;
 }
@@ -1257,12 +950,12 @@ background: rgba(40, 167, 69, 0.6);}
 
 /*** Contact Start ***/
 .contact .container form .btn.btn-primary {
-    box-shadow: inset 0 0 0 0 var(--bs-primary);
+    box-shadow: inset 0 0 0 0 #198754;
 }
 
 .contact .container form .btn.btn-primary:hover {
     box-shadow: inset 1000px 0 0 0 var(--bs-light) !important;
-    color: var(--bs-primary) !important;
+    color: #198754 !important;
 }
 /*** Contact End ***/
 
@@ -1315,12 +1008,12 @@ background: rgba(40, 167, 69, 0.6);}
     transition: 0.5s;
 }
 .footer .footer-item a:hover {
-    color: #28a745; 
+    color: #198754; 
     text-decoration: none;
 }
 
 .footer .footer-item a:hover i {    
-    color: #28a745; 
+    color: #198754; 
 }
 
 .footer .footer-item a:hover img {
@@ -1335,3 +1028,12 @@ background: rgba(40, 167, 69, 0.6);}
     background: var(--bs-dark) !important;
 }
 /*** copyright end ***/
+
+
+
+
+body h1 h2 h3 h4 h5{
+font-family: "IBM Plex Sans Arabic";
+  font-weight: 600;
+  font-style: normal;
+}

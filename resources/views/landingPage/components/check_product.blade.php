@@ -12,7 +12,7 @@
                 </div>
             </div>
             <div class="col-lg-7 bg-light">
-                <h1 class="mb-4"> <span class="text-success">شّيك منتجك</span></h1>
+                <h1 class="mb-4"> <span class="text-success">شيّك منتجك</span></h1>
                 <p class="mb-4">بتصفن كتير قدام رف المنتجات و مش قادر تميز شو الصحي الك ؟</p>
                 <p class="mb-4">عبي بيانات منتجك واكتشف اذا كان منتجك صحي او غير صحي</p>
                 <div class="row gy-2 gx-4 mb-4">

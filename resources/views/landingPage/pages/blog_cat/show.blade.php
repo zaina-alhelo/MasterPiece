@@ -13,9 +13,11 @@
         </ol>
     </div>
 </div>
+<section class="bg-light">
 
-<div class="container py-5">
-    <h2 class="text-center mb-4">{{ $category->category_name }}</h2>
+
+
+<div class="container py-5 bg-light">
 
     @if($blogs->isEmpty())
         <p class="text-center">لا توجد مقالات في هذه الفئة حتى الآن.</p>
@@ -37,6 +39,7 @@
         </div>
     @endif
 </div>
+</section>
 
 @endsection
 

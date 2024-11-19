@@ -14,7 +14,7 @@
                 <a href="{{route('landing.recipe_cat.index')}}" class="nav-item nav-link {{ request()->routeIs('landing.recipe_cat.index') ? 'active' : '' }}">وصفات</a>
                 <a href="{{route('landing.blog_cat.index')}}" class="nav-item nav-link {{ request()->routeIs('landing.blog_cat.index') ? 'active' : '' }}">مقالات</a>
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">خدماتنا</a>
+                    <a href="#  " class="nav-link dropdown-toggle" data-bs-toggle="dropdown">خدماتنا</a>
                     <div class="dropdown-menu m-0">
                         <a href="{{route('bmi')}}" class="dropdown-item {{ request()->routeIs('bmi') ? 'active' : '' }}">مؤشر كتلة الجسم</a>
                         <a href="{{route('idealWeight')}}" class="dropdown-item {{ request()->routeIs('idealWeight') ? 'active' : '' }}">الوزن المثالي</a>

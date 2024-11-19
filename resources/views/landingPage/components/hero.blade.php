@@ -11,8 +11,8 @@
                             <img src="{{ asset('assets_land/img/hero1.jpg')}}" class="img-fluid" alt="Image">
                             <div class="carousel-caption">
                                 <div class="p-3" style="max-width: 900px;">
-                                    <h4 class="text-white text-uppercase fw-bold mb-4" >عيش حياة صحية ومتوازنة </h4>
-                                    <h3 class="display-2 text-capitalize text-white mb-4">  ابدأ رحلتك نحو حياة صحية</h3>
+                                    <h4 class="text-white  mb-4" >عيش حياة صحية ومتوازنة </h4>
+                                    <h1 class=" text-white mb-4">  ابدأ رحلتك نحو حياة صحية</h1>
                                     <p class="mb-5 fs-5">اكتشف وصفات غذائية لذيذة وصحية، خطط تمارين رياضية، واحصل على نصائح حول أسلوب حياة متكامل لتحقيق أهدافك الصحية. سواء كنت تسعى لفقدان الوزن، بناء العضلات، أو ببساطة تحسين صحتك،  هنا لدعمك في كل خطوة 
                                     </p>
                                         @guest

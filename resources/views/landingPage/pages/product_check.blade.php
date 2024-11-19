@@ -5,10 +5,10 @@
 
 <div class="container-fluid bg-breadcrumb">
     <div class="container text-center py-5" style="max-width: 900px;">
-        <h3 class="text-white display-3 mb-4">فاحص صحة المنتج</h3>
+        <h3 class="text-white display-3 mb-4"> شيّك منتجك </h3>
         <ol class="breadcrumb justify-content-center mb-0">
             <li class="breadcrumb-item"><a href="{{url('/')}}" class="text-white">الصفحة الرئيسية</a></li>
-            <li class="breadcrumb-item active text-white">فاحص صحة المنتج</li>
+            <li class="breadcrumb-item active text-white">  شيّك منتجك  </li>
         </ol>
     </div>
 </div>
@@ -20,7 +20,7 @@
                 <div class="bg-white rounded-lg shadow-lg p-5">
                     <form id="productForm">
                         <div class="mb-3">
-                            <label for="barcode" class="form-label">الباركود أو اسم المنتج</label>
+                            <label for="barcode" class="form-label">الباركود   </label>
                             <input type="text" id="barcode" name="barcode" required class="form-control">
                         </div>
                         <button type="submit" class="btn btn-danger w-100">بحث عن المنتج</button>

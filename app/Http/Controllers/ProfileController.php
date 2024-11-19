@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProfileUpdateRequest;
+use App\Models\Message;
 use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 
 class ProfileController extends Controller
@@ -13,6 +15,15 @@ class ProfileController extends Controller
     public function index($id): View
     {
         $user = User::findOrFail($id);
+          $notification = Auth::user()->customNotifications()
+        ->where('id', $user->id)
+        ->whereNull('read_at')
+        ->first();
+
+    if ($notification) {
+        $notification->read_at = now();
+        $notification->save();
+    }
         return view('profile.index', compact('user'));
     }
 
@@ -31,10 +42,9 @@ class ProfileController extends Controller
         'user_activity' => 'nullable|array',
     ]);
 
-    $user->user_interests = $request->has('user_interests') ? implode(',', $request->user_interests) : '';  // استبدال null بالقيمة الفارغة
-    $user->user_conditions = $request->has('user_conditions') ? implode(',', $request->user_conditions) : '';  // استبدال null بالقيمة الفارغة
-    $user->user_activity = $request->has('user_activity') ? implode(',', $request->user_activity) : '';  // استبدال null بالقيمة الفارغة
-
+    $user->user_interests = $request->has('user_interests') ? implode(',', $request->user_interests) : '';  
+    $user->user_conditions = $request->has('user_conditions') ? implode(',', $request->user_conditions) : '';  
+    $user->user_activity = $request->has('user_activity') ? implode(',', $request->user_activity) : ''; 
     $user->update($request->except('profile_image', 'user_interests', 'user_conditions', 'user_activity'));
 
     if ($request->hasFile('profile_image')) {
@@ -55,6 +65,17 @@ class ProfileController extends Controller
     $user->save();
 
     return redirect()->back()->with('success', 'Profile Updated Successfully');
+}
+public function show($id)
+{
+    $message = Message::findOrFail($id);
+
+    if (!$message->read_at) {
+        $message->read_at = now(); 
+        $message->save(); 
+    }
+
+    return view( route('messages.index'), compact('message'));
 }
 
 }

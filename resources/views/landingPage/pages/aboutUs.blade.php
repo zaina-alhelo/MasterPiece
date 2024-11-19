@@ -15,10 +15,10 @@
 </div>
 
 <!-- About Section -->
-<div class="container-fluid about py-5" style="background-color: #f4f9fb;">
+<div class="container-fluid about py-5 bg-light">
     <div class="container py-5">
-        <div class="row justify-content-center rtl">
-            <div class="col-lg-8">
+        <div class="row justify-content-center rtl ">
+            <div class="col-lg-8 ">
                 <h5 class="text-success mb-3 text-center fw-bold"> الأخصائية</h5>
                 <h1 class="mb-4 text-center display-4 text-dark"> <span class="text-success">  ربى  الحلو </span></h1>
                 <p class="mb-4 text-justify" style="line-height: 1.8;">

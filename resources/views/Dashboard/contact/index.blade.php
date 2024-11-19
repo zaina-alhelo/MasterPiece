@@ -30,19 +30,17 @@ Contact
                                 <td>
                             
 </a>
-<a href="{{ route('contact.show', $contact->id) }}" class="text-warring ">
-    <i class="bi bi-eye "></i> 
+
+<a href="{{ route('contact.show', $contact->id) }}" class="btn btn-warning btn-sm  "> <i class="bi bi-eye"></i> Show 
 </a>
-
-                            <form action="{{ route('contact.destroy', $contact->id) }}" method="POST" style="display:inline;" class="delete-form">
-                                @csrf
-                            @method('DELETE')
-                            
-                    <button class="text-danger delete-button">
-                      <i class="bi bi-x"></i> 
-                        </button>
-                           </form>
-
+    <form action="{{ route('contact.destroy', $contact->id) }}" method="POST" style="display:inline;" class="delete-form">
+        @csrf
+        @method('DELETE')
+        <button  class="btn btn-danger btn-sm delete-button">
+            <i class="bi bi-trash "></i> Delete
+        </button>
+    </form>
+                      
                                 </td>
                             </tr>
                             @endforeach

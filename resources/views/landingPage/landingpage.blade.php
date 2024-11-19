@@ -9,6 +9,5 @@
 @include("landingPage.components.recipes")
 @include("landingPage.components.success_story")
 @include("landingPage.components.testimonial")
-
 @include("landingPage.components.caption")
 @include( "landingPage.components.footer")

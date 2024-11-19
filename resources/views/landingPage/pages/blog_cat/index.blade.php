@@ -11,23 +11,26 @@
         </ol>
     </div>
 </div>
+<section class="bg-light" >
 
-<div class="container py-5">
-    <div class="row">
-        @foreach ($categories as $category)
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card h-100 position-relative text-center" style="overflow: hidden;">
-                    <img src="{{ asset($category->image) }}" class="img-fluid" alt="{{ $category->category_name }}" style="height: 300px; width: 100%; object-fit: cover;">
-                    
-                    <div class="card-img-overlay d-flex flex-column justify-content-center align-items-center text-white" style="background: rgba(0, 0, 0, 0.5);">
-                        <h4 class="card-title mb-3 text-white">{{ $category->category_name }}</h4>
-                        <a href="{{ route('landing.blog_cat.show', $category->id) }}" class="btn btn-success">عرض المزيد</a>
+    <div class="container py-5 bg-light ">
+        <div class="row">
+            @foreach ($categories as $category)
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100 position-relative text-center" style="overflow: hidden;">
+                        <img src="{{ asset($category->image) }}" class="img-fluid" alt="{{ $category->category_name }}" style="height: 300px; width: 100%; object-fit: cover;">
+                        
+                        <div class="card-img-overlay d-flex flex-column justify-content-center align-items-center text-white" style="background: rgba(0, 0, 0, 0.5);">
+                            <h4 class="card-title mb-3 text-white">{{ $category->category_name }}</h4>
+                            <a href="{{ route('landing.blog_cat.show', $category->id) }}" class="btn btn-success">عرض المزيد</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-        @endforeach
+            @endforeach
+        </div>
     </div>
-</div>
+
+</section>
 @endsection
 
 
